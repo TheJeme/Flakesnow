@@ -1,0 +1,248 @@
+﻿<Window x:Class="Flakesnow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Flakesnow"
+        mc:Ignorable="d"
+        WindowStyle="None" 
+        AllowsTransparency="True"
+        WindowState="Maximized"
+        Background="#f7f7f7"
+        Icon="Resources/snowflake-icon.ico"
+        Height="750" Width="1200" MinHeight="750" MinWidth="1200" StateChanged="Window_StateChanged" Closing="Window_Closing">
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+        CaptionHeight="14"  
+        CornerRadius="0"
+        ResizeBorderThickness="5"         
+        GlassFrameThickness="0">
+        </WindowChrome>
+    </WindowChrome.WindowChrome>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Fill="#8b35c2" Grid.Row="0" Grid.Column="1" Width="Auto" Height="Auto"/>
+        <Rectangle Fill="#8b35c2" Grid.Row="0" Grid.Column="0" Width="Auto" Height="Auto"/>
+        <Label Grid.Row="0" Width="40" Grid.Column="1" Content="x" FontSize="24" HorizontalAlignment="right" HorizontalContentAlignment="Center" VerticalAlignment="Top" MouseLeftButtonDown="quit_Button"/>
+        <Label Grid.Row="0" Width="40" Grid.Column="1" Content="__" FontSize="24" HorizontalAlignment="right" HorizontalContentAlignment="Center" Margin="41,0" VerticalAlignment="Top" MouseLeftButtonDown="hideWindow_Button"/>
+
+        <Rectangle Fill="#2d2d30" Grid.Row="1" Grid.Column="0" Width="300" Height="Auto"/>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+
+            <Border Background="RoyalBlue" Margin="0,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Width="300" Height="120">
+                <Label Content="Flakesnow" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="28"/>
+            </Border>
+            
+            <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border1_MouseLeftButtonDown">
+                <StackPanel Orientation="Horizontal">
+                    <Image Grid.Column="1" Source="Resources/house.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
+                    <Label Foreground="White" Content="Home" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border2_MouseLeftButtonDown">
+                <StackPanel Orientation="Horizontal">
+                    <Image Grid.Column="1" Source="Resources/id-card.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
+                    <Label Foreground="White" Content="Stats" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border4_MouseLeftButtonDown">
+                <StackPanel Orientation="Horizontal">
+                    <Image Grid.Column="1" Source="Resources/thermometer.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
+                    <Label Foreground="White" Content="Weather" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+            
+            <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border3_MouseLeftButtonDown">
+                <StackPanel Orientation="Horizontal">
+                    <Image Grid.Column="1" Source="Resources/checklist.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
+                    <Label Foreground="White" Content="Reminders" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border5_MouseLeftButtonDown">
+                <StackPanel Orientation="Horizontal">
+                    <Image Grid.Column="1" Source="Resources/cog.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
+                    <Label Foreground="White" Content="Configure" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+            
+        </StackPanel>
+
+
+
+        <Grid x:Name="HomeGrid" Visibility="Visible" Background="#36393f" Grid.Row="1" Grid.Column="1">
+
+            <Label Foreground="White" FontSize="32" Margin="80,10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Home"/>
+
+            <Border Background="#e33b29" MaxWidth="850" CornerRadius="10" Margin="120,90" VerticalAlignment="Top" Height="80">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <Label x:Name="txtGood" Foreground="White" FontSize="32" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Good morning, Jeme" Margin="175,0,176,0"/>
+                </StackPanel>
+            </Border>
+            
+            <Label Foreground="White" FontSize="32" Margin="0,210" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Apps"/>
+            <Border Background="#e33b29" MaxWidth="850" CornerRadius="10" Margin="120,280,120,0" VerticalAlignment="Top" Height="180">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image x:Name="App1Image" Source="Resources/noodes1.png" Margin="30,0" Width="100" Height="100" MouseDown="App1Image_MouseDown"/>
+                    <Image x:Name="App2Image" Source="Resources/steam-icon.png" Margin="30,0" Width="100" Height="100" MouseDown="App2Image_MouseDown"/>
+                    <Image x:Name="App3Image" Source="Resources/discord-icon.png" Margin="30,0" Width="100" Height="100" MouseDown="App3Image_MouseDown"/>
+                    <Image x:Name="App4Image" Source="Resources/google-icon.png" Margin="30,0" Width="100" Height="100" MouseDown="App4Image_MouseDown"/>
+                </StackPanel>
+            </Border>
+
+        </Grid>
+
+        <Grid x:Name="StatsGrid" Visibility="Collapsed" Background="#36393f" Grid.Row="1" Grid.Column="1">
+
+            <Label Foreground="White" FontSize="32" Margin="80,10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Stats"/>
+
+        </Grid>
+
+        <Grid x:Name="RemindersGrid" Visibility="Collapsed" Background="#36393f" Grid.Row="1" Grid.Column="1">
+
+            <Label Foreground="White" FontSize="32" Margin="80,10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Reminders"/>
+
+
+            <Border CornerRadius="64" Background="#e33b29" Margin="55,55" Width="60" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Right" MouseLeftButtonDown="AddNewReminder_Button">
+                <Label Content="+" Margin="0,-16,0,13" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="52" Foreground="White"/>
+            </Border>
+
+
+            <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalAlignment="Center" Margin="120,70,120,70" VerticalAlignment="Top">
+                
+                <StackPanel Orientation="Vertical">
+
+                    <Border x:Name="Reminder1" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20" Height="Auto">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteReminder1_Button"/>
+                            <TextBox x:Name="Reminder1Title" MaxLength="30" Width="500" Foreground="#7289da" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder1Title_GotFocus" TextChanged="Reminder1Title_TextChanged"/>
+                            <TextBox x:Name="Reminder1Text" AcceptsReturn="True" Foreground="White" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder1Text_GotFocus" TextChanged="Reminder1Text_TextChanged"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border x:Name="Reminder2" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20" Height="Auto">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteReminder2_Button"/>
+                            <TextBox x:Name="Reminder2Title" MaxLength="30" Width="500" Foreground="#7289da" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder2Title_GotFocus" TextChanged="Reminder2Title_TextChanged"/>
+                            <TextBox x:Name="Reminder2Text" AcceptsReturn="True" Foreground="White" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder2Text_GotFocus" TextChanged="Reminder2Text_TextChanged"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border x:Name="Reminder3" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20" Height="Auto">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteReminder3_Button"/>
+                            <TextBox x:Name="Reminder3Title" MaxLength="30" Width="500" Foreground="#7289da" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder3Title_GotFocus" TextChanged="Reminder3Title_TextChanged"/>
+                            <TextBox x:Name="Reminder3Text" AcceptsReturn="True" Foreground="White" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder3Text_GotFocus" TextChanged="Reminder3Text_TextChanged"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border x:Name="Reminder4" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20" Height="Auto">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteReminder4_Button"/>
+                            <TextBox x:Name="Reminder4Title" MaxLength="30" Width="500" Foreground="#7289da" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder4Title_GotFocus" TextChanged="Reminder4Title_TextChanged"/>
+                            <TextBox x:Name="Reminder4Text" AcceptsReturn="True" Foreground="White" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder4Text_GotFocus" TextChanged="Reminder4Text_TextChanged"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border x:Name="Reminder5" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20" Height="Auto">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteReminder5_Button"/>
+                            <TextBox x:Name="Reminder5Title" MaxLength="30" Width="500" Foreground="#7289da" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder5Title_GotFocus" TextChanged="Reminder5Title_TextChanged"/>
+                            <TextBox x:Name="Reminder5Text" AcceptsReturn="True" Foreground="White" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder5Text_GotFocus" TextChanged="Reminder5Text_TextChanged"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border x:Name="Reminder6" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20" Height="Auto">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteReminder6_Button"/>
+                            <TextBox x:Name="Reminder6Title" MaxLength="30" Width="500" Foreground="#7289da" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder6Title_GotFocus" TextChanged="Reminder6Title_TextChanged"/>
+                            <TextBox x:Name="Reminder6Text" AcceptsReturn="True" Foreground="White" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder6Text_GotFocus" TextChanged="Reminder6Text_TextChanged"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+            </ScrollViewer>
+
+
+        </Grid>
+
+        <Grid x:Name="WeatherGrid" Visibility="Collapsed" Background="#36393f" Grid.Row="1" Grid.Column="1">
+
+            <Label Foreground="White" FontSize="32" Margin="80,10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Weather"/>
+
+            <Border Background="#e33b29" CornerRadius="10" MaxWidth="600" Margin="270,120,270,0" Grid.Row="1" VerticalAlignment="Top" Height="150">
+                <StackPanel Orientation="Vertical">
+                    <Label x:Name="txtCity" Foreground="White" FontSize="28" HorizontalAlignment="Center" Content="Lapinlahti" VerticalAlignment="Top"/>
+                    <Label x:Name="txtDegrees" Margin="0,-10" Foreground="White" FontSize="56" HorizontalAlignment="Center" Content="30°C" VerticalAlignment="Top"/>
+                    <Label x:Name="txtSymbol" Foreground="White" FontSize="20" HorizontalAlignment="Center" Content="Clouds" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#e33b29" CornerRadius="10" Margin="70,340,70,0" VerticalAlignment="Top" MaxWidth="800" Height="180">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock x:Name="txtTimeTemp1" Foreground="White" Width="60" FontSize="24" Text="13.00&#x0a;30°C" TextAlignment="Center" Margin="16,20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="txtTimeTemp2" Foreground="White" Width="60" FontSize="24" Text="13.00&#x0a;30°C" TextAlignment="Center" Margin="16,20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="txtTimeTemp3" Foreground="White" Width="60" FontSize="24" Text="13.00&#x0a;30°C" TextAlignment="Center" Margin="16,20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="txtTimeTemp4" Foreground="White" Width="60" FontSize="24" Text="13.00&#x0a;30°C" TextAlignment="Center" Margin="16,20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="txtTimeTemp5" Foreground="White" Width="60" FontSize="24" Text="13.00&#x0a;30°C" TextAlignment="Center" Margin="16,20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="txtTimeTemp6" Foreground="White" Width="60" FontSize="24" Text="13.00&#x0a;30°C" TextAlignment="Center" Margin="16,20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="txtTimeTemp7" Foreground="White" Width="60" FontSize="24" Text="13.00&#x0a;30°C" TextAlignment="Center" Margin="16,20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="txtTimeTemp8" Foreground="White" Width="60" FontSize="24" Text="13.00&#x0a;30°C" TextAlignment="Center" Margin="16,20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image x:Name="txtTimeSymbol1" Source="Resources/wi-night-snow.png" Margin="16,0" Width="60" Height="60"/>
+                        <Image x:Name="txtTimeSymbol2" Source="Resources/wi-cloudy.png" Margin="16,0" Width="60" Height="60"/>
+                        <Image x:Name="txtTimeSymbol3" Source="Resources/wi-cloudy.png" Margin="16,0" Width="60" Height="60"/>
+                        <Image x:Name="txtTimeSymbol4" Source="Resources/wi-cloudy.png" Margin="16,0" Width="60" Height="60"/>
+                        <Image x:Name="txtTimeSymbol5" Source="Resources/wi-cloudy.png" Margin="16,0" Width="60" Height="60"/>
+                        <Image x:Name="txtTimeSymbol6" Source="Resources/wi-cloudy.png" Margin="16,0" Width="60" Height="60"/>
+                        <Image x:Name="txtTimeSymbol7" Source="Resources/wi-cloudy.png" Margin="16,0" Width="60" Height="60"/>
+                        <Image x:Name="txtTimeSymbol8" Source="Resources/wi-cloudy.png" Margin="16,0" Width="60" Height="60"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Grid x:Name="ConfigureGrid" Visibility="Collapsed" Background="#36393f" Grid.Row="1" Grid.Column="1">
+
+            <Label Foreground="White" FontSize="32" Margin="80,10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Configure"/>
+
+            <Border Background="#e33b29" CornerRadius="10" Margin="140,90,140,0" VerticalAlignment="Top" MaxWidth="700" Height="70">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Foreground="White" FontSize="18" Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Location"/>
+                    <Border Background="White" CornerRadius="10" Grid.Row="1" Width="450" Height="30">
+                        <TextBox x:Name="txtLocation" HorizontalAlignment="Left" Margin="20,0" Foreground="#7289da" VerticalAlignment="Center" Text="Lapinlahti" FontSize="18" VerticalContentAlignment="Center" Background="White" BorderThickness="0" Width="400" MaxLength="40"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#e33b29" CornerRadius="10" Margin="140,200,140,0" VerticalAlignment="Top" MaxWidth="700" Height="70">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Foreground="White" FontSize="18" Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Unit System"/>
+
+                    <Border x:Name="CelsiusButton" Background="White" CornerRadius="10" Margin="30,0" VerticalAlignment="Center" MouseLeftButtonDown="CelsiusButton_MouseLeftButtonDown">
+                        <Label FontSize="20" Foreground="#7289da" Content="Celsius" HorizontalContentAlignment="Center" Width="130" VerticalContentAlignment="Center"/>
+                    </Border>
+
+                    <Border x:Name="FahrenheitButton" Background="LightGray" CornerRadius="10" Margin="30,0" VerticalAlignment="Center" MouseLeftButtonDown="FahrenheitButton_MouseLeftButtonDown">
+                        <Label FontSize="20" Foreground="#7289da" Content="Fahrenheit" Width="130" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,60 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Flakesnow.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Reminder1Title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Reminder</Value>
+    </Setting>
+    <Setting Name="Reminder2Title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Reminder</Value>
+    </Setting>
+    <Setting Name="Reminder3Title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Reminder</Value>
+    </Setting>
+    <Setting Name="Reminder4Title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Reminder</Value>
+    </Setting>
+    <Setting Name="Reminder5Title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Reminder</Value>
+    </Setting>
+    <Setting Name="Reminder6Title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Reminder</Value>
+    </Setting>
+    <Setting Name="Reminder1Text" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Type here...</Value>
+    </Setting>
+    <Setting Name="Reminder2Text" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Type here...</Value>
+    </Setting>
+    <Setting Name="Reminder3Text" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Type here...</Value>
+    </Setting>
+    <Setting Name="Reminder4Text" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Type here...</Value>
+    </Setting>
+    <Setting Name="Reminder5Text" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Type here...</Value>
+    </Setting>
+    <Setting Name="Reminder6Text" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Type here...</Value>
+    </Setting>
+    <Setting Name="Reminder1Active" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Reminder2Active" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Reminder3Active" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Reminder4Active" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Reminder5Active" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Reminder6Active" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
