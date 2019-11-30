@@ -1,0 +1,17 @@
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\bin\Debug\Flakesnow.exe.config
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\bin\Debug\Flakesnow.exe
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\bin\Debug\Flakesnow.pdb
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Flakesnow.csprojAssemblyReference.cache
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\MainWindow.g.cs
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\App.g.cs
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Flakesnow_MarkupCompile.cache
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Flakesnow_MarkupCompile.lref
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\MainWindow.baml
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Flakesnow.g.resources
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Flakesnow.Properties.Resources.resources
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Flakesnow.csproj.GenerateResource.cache
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Flakesnow.csproj.CoreCompileInputs.cache
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Flakesnow.exe
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Flakesnow.pdb
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\App.baml
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Flakesnow_Content.g.cs
