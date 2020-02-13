@@ -85,6 +85,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Alarm.xaml.cs">
+      <DependentUpon>Alarm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Colorpicker.xaml.cs">
       <DependentUpon>Colorpicker.xaml</DependentUpon>
     </Compile>
@@ -97,6 +100,10 @@
     <Compile Include="Timer.xaml.cs">
       <DependentUpon>Timer.xaml</DependentUpon>
     </Compile>
+    <Page Include="Alarm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Colorpicker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -202,7 +209,11 @@
     <Resource Include="Resources\wi-rain.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\calculator-icon.png" />
+    <Resource Include="Resources\alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\alarm.ico" />
+    <Content Include="Resources\alarmsound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

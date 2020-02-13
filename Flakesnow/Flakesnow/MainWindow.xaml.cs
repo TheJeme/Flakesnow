@@ -859,7 +859,8 @@ namespace Flakesnow
         {
             if (e.ClickCount >= 2)
             {
-                Process.Start(@"D:\KOODAUS\C#\Work In Progress\Noodes\Noodes\bin\Release\Noodes.exe");
+                var alarm = new Alarm();
+                alarm.Show();
             }
         }
 

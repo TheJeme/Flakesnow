@@ -1,0 +1,106 @@
+﻿<Window x:Class="Flakesnow.Alarm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Flakesnow"       
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Title="Alarm" Height="350" Width="350" Loaded="Window_Loaded">
+    <Grid Background="#FF3C3C3C">
+        <Label x:Name="Label1" Content="00.00.00" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White"/>
+        <Button x:Name="AlarmButton" Content="Set alarm" Margin="0,250,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="82" Height="35" Click="AlarmButton_Click"/>
+        <ComboBox x:Name="HourBox" Margin="0,200,106,0" Width="80" MaxDropDownHeight="140" VerticalAlignment="Top" HorizontalAlignment="Center"  SelectedIndex="0">
+            <ComboBoxItem Content="00" Width="61"/>
+            <ComboBoxItem Content="01" Width="61"/>
+            <ComboBoxItem Content="02" Width="61"/>
+            <ComboBoxItem Content="03" Width="61"/>
+            <ComboBoxItem Content="04" Width="61"/>
+            <ComboBoxItem Content="05" Width="61"/>
+            <ComboBoxItem Content="06" Width="61"/>
+            <ComboBoxItem Content="07" Width="61"/>
+            <ComboBoxItem Content="08" Width="61"/>
+            <ComboBoxItem Content="09" Width="61"/>
+            <ComboBoxItem Content="10" Width="61"/>
+            <ComboBoxItem Content="11" Width="61"/>
+            <ComboBoxItem Content="12" Width="61"/>
+            <ComboBoxItem Content="13" Width="61"/>
+            <ComboBoxItem Content="14" Width="61"/>
+            <ComboBoxItem Content="15" Width="61"/>
+            <ComboBoxItem Content="16" Width="61"/>
+            <ComboBoxItem Content="17" Width="61"/>
+            <ComboBoxItem Content="18" Width="61"/>
+            <ComboBoxItem Content="19" Width="61"/>
+            <ComboBoxItem Content="20" Width="61"/>
+            <ComboBoxItem Content="21" Width="61"/>
+            <ComboBoxItem Content="22" Width="61"/>
+            <ComboBoxItem Content="23" Width="61"/>
+        </ComboBox>
+        <ComboBox x:Name="MinuteBox" Margin="106,200,0,0" MaxDropDownHeight="140" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" SelectedIndex="0">
+            <ComboBoxItem Content="00" Width="61"/>
+            <ComboBoxItem Content="01" Width="61"/>
+            <ComboBoxItem Content="02" Width="61"/>
+            <ComboBoxItem Content="03" Width="61"/>
+            <ComboBoxItem Content="04" Width="61"/>
+            <ComboBoxItem Content="05" Width="61"/>
+            <ComboBoxItem Content="06" Width="61"/>
+            <ComboBoxItem Content="07" Width="61"/>
+            <ComboBoxItem Content="08" Width="61"/>
+            <ComboBoxItem Content="09" Width="61"/>
+            <ComboBoxItem Content="10" Width="61"/>
+            <ComboBoxItem Content="11" Width="61"/>
+            <ComboBoxItem Content="12" Width="61"/>
+            <ComboBoxItem Content="13" Width="61"/>
+            <ComboBoxItem Content="14" Width="61"/>
+            <ComboBoxItem Content="15" Width="61"/>
+            <ComboBoxItem Content="16" Width="61"/>
+            <ComboBoxItem Content="17" Width="61"/>
+            <ComboBoxItem Content="18" Width="61"/>
+            <ComboBoxItem Content="19" Width="61"/>
+            <ComboBoxItem Content="20" Width="61"/>
+            <ComboBoxItem Content="21" Width="61"/>
+            <ComboBoxItem Content="22" Width="61"/>
+            <ComboBoxItem Content="23" Width="61"/>
+            <ComboBoxItem Content="24" Width="61"/>
+            <ComboBoxItem Content="25" Width="61"/>
+            <ComboBoxItem Content="26" Width="61"/>
+            <ComboBoxItem Content="27" Width="61"/>
+            <ComboBoxItem Content="28" Width="61"/>
+            <ComboBoxItem Content="29" Width="61"/>
+            <ComboBoxItem Content="30" Width="61"/>
+            <ComboBoxItem Content="31" Width="61"/>
+            <ComboBoxItem Content="32" Width="61"/>
+            <ComboBoxItem Content="33" Width="61"/>
+            <ComboBoxItem Content="34" Width="61"/>
+            <ComboBoxItem Content="35" Width="61"/>
+            <ComboBoxItem Content="36" Width="61"/>
+            <ComboBoxItem Content="37" Width="61"/>
+            <ComboBoxItem Content="38" Width="61"/>
+            <ComboBoxItem Content="39" Width="61"/>
+            <ComboBoxItem Content="40" Width="61"/>
+            <ComboBoxItem Content="41" Width="61"/>
+            <ComboBoxItem Content="42" Width="61"/>
+            <ComboBoxItem Content="43" Width="61"/>
+            <ComboBoxItem Content="44" Width="61"/>
+            <ComboBoxItem Content="45" Width="61"/>
+            <ComboBoxItem Content="46" Width="61"/>
+            <ComboBoxItem Content="47" Width="61"/>
+            <ComboBoxItem Content="48" Width="61"/>
+            <ComboBoxItem Content="49" Width="61"/>
+            <ComboBoxItem Content="50" Width="61"/>
+            <ComboBoxItem Content="51" Width="61"/>
+            <ComboBoxItem Content="52" Width="61"/>
+            <ComboBoxItem Content="53" Width="61"/>
+            <ComboBoxItem Content="54" Width="61"/>
+            <ComboBoxItem Content="55" Width="61"/>
+            <ComboBoxItem Content="56" Width="61"/>
+            <ComboBoxItem Content="57" Width="61"/>
+            <ComboBoxItem Content="58" Width="61"/>
+            <ComboBoxItem Content="59" Width="61"/>
+        </ComboBox>
+        <Label Content=":" HorizontalAlignment="center" Margin="0,190,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Historic" FontSize="20" Height="58" Foreground="White"/>
+        <Label x:Name="Label2" Content="Monday, 1 January 2018" Margin="0,26,0,0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="22" Width="389" Foreground="White"/>
+        <Label x:Name="AlarmTime" Content="Set alarm time" HorizontalContentAlignment="center" HorizontalAlignment="center" Margin="0,150,0,0" VerticalAlignment="Top" Width="186" FontSize="16" Foreground="White"/>
+
+    </Grid>
+</Window>

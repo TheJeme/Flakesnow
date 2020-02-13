@@ -38,3 +38,6 @@ D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Screenpickwindow.baml
 D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Flakesnow.csproj.CopyComplete
 D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Noodes.g.cs
 D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Noodes.baml
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Alarm.g.cs
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Flakesnow_Content.g.cs
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\obj\Debug\Alarm.baml

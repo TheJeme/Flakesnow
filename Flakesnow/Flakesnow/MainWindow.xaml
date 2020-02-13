@@ -32,9 +32,11 @@
 
         <Rectangle Fill="#202225" Grid.Row="0" Grid.Column="1" Width="Auto" Height="Auto"/>
         <Rectangle Fill="#202225" Grid.Row="0" Grid.Column="0" Width="Auto" Height="Auto"/>
-        <Label Content="Flakesnow" Grid.Row="0" Grid.Column="0" Foreground="White" FontSize="24" Margin="20,0"/>
-        <Label Grid.Row="0" Foreground="White" Width="40" Grid.Column="1" Content="x" FontSize="24" HorizontalAlignment="right" HorizontalContentAlignment="Center" VerticalAlignment="Top" MouseLeftButtonDown="quit_Button"/>
-        <Label Grid.Row="0" Foreground="White" Width="40" Grid.Column="1" Content="__" FontSize="24" HorizontalAlignment="right" HorizontalContentAlignment="Center" Margin="41,0" VerticalAlignment="Top" MouseLeftButtonDown="hideWindow_Button"/>
+        <Label Content="Flakesnow" Grid.Row="0" Grid.Column="0" Foreground="White" FontSize="22" VerticalContentAlignment="Center" Margin="20,0"/>
+        <Label Grid.Row="0" Foreground="White" Width="40" Height="40" Grid.Column="1" Content="x" FontSize="24" HorizontalAlignment="right" HorizontalContentAlignment="Center" Margin="0,0" VerticalAlignment="Center" MouseLeftButtonDown="quit_Button"/>
+        <Label Grid.Row="0" Foreground="White" Width="40" Height="40" Grid.Column="1" Content="⧠" FontSize="16" HorizontalAlignment="right" HorizontalContentAlignment="Center" Margin="41,0" VerticalAlignment="Center" VerticalContentAlignment="Bottom" MouseLeftButtonDown="hideWindow_Button"/>
+        <Label Grid.Row="0" Foreground="White" Width="40" Height="40" Grid.Column="1" Content="__" FontSize="24" HorizontalAlignment="right" HorizontalContentAlignment="Center" Margin="81,0" VerticalAlignment="Center" MouseLeftButtonDown="hideWindow_Button"/>
+        
 
         <Rectangle Fill="#2d2d30" Grid.Row="1" Grid.Column="0" Width="300" Height="Auto"/>
 
@@ -97,13 +99,13 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Image x:Name="App1Image" Source="Resources/noodes.png" Margin="27,0" Width="120" Height="120" MouseDown="App1Image_MouseDown"/>
                         <Image x:Name="App2Image" Source="Resources/color-picker.png" Margin="27,0" Width="120" Height="120" MouseDown="App2Image_MouseDown"/>
-                        <Image x:Name="App3Image" Source="Resources/calculator-icon.png" Margin="27,0" Width="120" Height="120" MouseDown="App3Image_MouseDown"/>
+                        <Image x:Name="App3Image" Source="Resources/alarm.png" Margin="27,0" Width="120" Height="120" MouseDown="App3Image_MouseDown"/>
                         <Image x:Name="App4Image" Source="Resources/timer.png" Margin="27,0" Width="120" Height="120" MouseDown="App4Image_MouseDown"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="25" Width="120" Margin="27,10" Content="Notes"/>
                         <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="25" Width="120" Margin="27,10" Content="Colorpick"/>
-                        <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="25" Width="120" Margin="27,10" Content="Calculator"/>
+                        <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="25" Width="120" Margin="27,10" Content="Alarm"/>
                         <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="25" Width="120" Margin="27,10" Content="Timer"/>
                     </StackPanel>
                 </StackPanel>
