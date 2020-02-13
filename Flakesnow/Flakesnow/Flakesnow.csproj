@@ -64,12 +64,43 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.7.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.7.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.7.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.7.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.7.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.7.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.7.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.7.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.7.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.7.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Colorpicker.xaml.cs">
+      <DependentUpon>Colorpicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Noodes.xaml.cs">
+      <DependentUpon>Noodes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screenpickwindow.xaml.cs">
+      <DependentUpon>Screenpickwindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Timer.xaml.cs">
+      <DependentUpon>Timer.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Colorpicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -82,6 +113,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Noodes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screenpickwindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Timer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -101,6 +144,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -108,53 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\cog.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\power-button.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\house.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\checklist.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\thermometer.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\id-card.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\flakesnow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\plus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\wi-cloudy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\menu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\wi-day-cloudy.png" />
-    <Resource Include="Resources\wi-day-lightning.png" />
-    <Resource Include="Resources\wi-day-rain.png" />
-    <Resource Include="Resources\wi-day-snow.png" />
-    <Resource Include="Resources\wi-day-sunny.png" />
-    <Resource Include="Resources\wi-fog.png" />
-    <Resource Include="Resources\wi-night-clear.png" />
-    <Resource Include="Resources\wi-night-cloudy.png" />
-    <Resource Include="Resources\wi-night-lightning.png" />
-    <Resource Include="Resources\wi-night-rain.png" />
-    <Resource Include="Resources\wi-night-snow.png" />
-    <Resource Include="Resources\wi-rain.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\snowflake-icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
@@ -169,19 +166,43 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\close1.png" />
+    <Resource Include="Resources\minimize1.png" />
+    <Resource Include="Resources\new1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\checklist.png" />
+    <Resource Include="Resources\cog.png" />
+    <Resource Include="Resources\color-picker.ico" />
+    <Resource Include="Resources\color-picker.png" />
+    <Resource Include="Resources\colorpicker.png" />
+    <Resource Include="Resources\hourglass.png" />
+    <Resource Include="Resources\house.png" />
+    <Resource Include="Resources\id-card.png" />
     <Resource Include="Resources\noodes.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\noodes1.png" />
+    <Resource Include="Resources\paint.png" />
+    <Resource Include="Resources\plus.png" />
+    <Resource Include="Resources\snowflake-icon.ico" />
+    <Resource Include="Resources\thermometer.png" />
+    <Resource Include="Resources\timer.ico" />
+    <Resource Include="Resources\timer.png" />
+    <Resource Include="Resources\wi-cloudy.png" />
+    <Resource Include="Resources\wi-day-cloudy.png" />
+    <Resource Include="Resources\wi-day-lightning.png" />
+    <Resource Include="Resources\wi-day-rain.png" />
+    <Resource Include="Resources\wi-day-snow.png" />
+    <Resource Include="Resources\wi-day-sunny.png" />
+    <Resource Include="Resources\wi-fog.png" />
+    <Resource Include="Resources\wi-night-clear.png" />
+    <Resource Include="Resources\wi-night-cloudy.png" />
+    <Resource Include="Resources\wi-night-lightning.png" />
+    <Resource Include="Resources\wi-night-rain.png" />
+    <Resource Include="Resources\wi-night-snow.png" />
+    <Resource Include="Resources\wi-rain.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\steam-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\discord-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\google-icon.png" />
+    <Resource Include="Resources\calculator-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

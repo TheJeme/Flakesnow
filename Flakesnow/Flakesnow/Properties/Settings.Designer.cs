@@ -238,5 +238,395 @@ namespace Flakesnow.Properties {
                 this["Reminder6Active"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool changedReminder1Text {
+            get {
+                return ((bool)(this["changedReminder1Text"]));
+            }
+            set {
+                this["changedReminder1Text"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool changedReminder2Text {
+            get {
+                return ((bool)(this["changedReminder2Text"]));
+            }
+            set {
+                this["changedReminder2Text"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool changedReminder3Text {
+            get {
+                return ((bool)(this["changedReminder3Text"]));
+            }
+            set {
+                this["changedReminder3Text"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool changedReminder4Text {
+            get {
+                return ((bool)(this["changedReminder4Text"]));
+            }
+            set {
+                this["changedReminder4Text"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool changedReminder5Text {
+            get {
+                return ((bool)(this["changedReminder5Text"]));
+            }
+            set {
+                this["changedReminder5Text"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool changedReminder6Text {
+            get {
+                return ((bool)(this["changedReminder6Text"]));
+            }
+            set {
+                this["changedReminder6Text"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool changedReminder1Title {
+            get {
+                return ((bool)(this["changedReminder1Title"]));
+            }
+            set {
+                this["changedReminder1Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool changedReminder2Title {
+            get {
+                return ((bool)(this["changedReminder2Title"]));
+            }
+            set {
+                this["changedReminder2Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool changedReminder3Title {
+            get {
+                return ((bool)(this["changedReminder3Title"]));
+            }
+            set {
+                this["changedReminder3Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool changedReminder4Title {
+            get {
+                return ((bool)(this["changedReminder4Title"]));
+            }
+            set {
+                this["changedReminder4Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool changedReminder5Title {
+            get {
+                return ((bool)(this["changedReminder5Title"]));
+            }
+            set {
+                this["changedReminder5Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool changedReminder6Title {
+            get {
+                return ((bool)(this["changedReminder6Title"]));
+            }
+            set {
+                this["changedReminder6Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Timer1Active {
+            get {
+                return ((bool)(this["Timer1Active"]));
+            }
+            set {
+                this["Timer1Active"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Timer2Active {
+            get {
+                return ((bool)(this["Timer2Active"]));
+            }
+            set {
+                this["Timer2Active"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Timer3Active {
+            get {
+                return ((bool)(this["Timer3Active"]));
+            }
+            set {
+                this["Timer3Active"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Timer4Active {
+            get {
+                return ((bool)(this["Timer4Active"]));
+            }
+            set {
+                this["Timer4Active"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Timer5Active {
+            get {
+                return ((bool)(this["Timer5Active"]));
+            }
+            set {
+                this["Timer5Active"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Timer6Active {
+            get {
+                return ((bool)(this["Timer6Active"]));
+            }
+            set {
+                this["Timer6Active"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime targetDateOnTimer1 {
+            get {
+                return ((global::System.DateTime)(this["targetDateOnTimer1"]));
+            }
+            set {
+                this["targetDateOnTimer1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime targetDateOnTimer2 {
+            get {
+                return ((global::System.DateTime)(this["targetDateOnTimer2"]));
+            }
+            set {
+                this["targetDateOnTimer2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime targetDateOnTimer3 {
+            get {
+                return ((global::System.DateTime)(this["targetDateOnTimer3"]));
+            }
+            set {
+                this["targetDateOnTimer3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime targetDateOnTimer4 {
+            get {
+                return ((global::System.DateTime)(this["targetDateOnTimer4"]));
+            }
+            set {
+                this["targetDateOnTimer4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime targetDateOnTimer5 {
+            get {
+                return ((global::System.DateTime)(this["targetDateOnTimer5"]));
+            }
+            set {
+                this["targetDateOnTimer5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime targetDateOnTimer6 {
+            get {
+                return ((global::System.DateTime)(this["targetDateOnTimer6"]));
+            }
+            set {
+                this["targetDateOnTimer6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Timer1Title {
+            get {
+                return ((string)(this["Timer1Title"]));
+            }
+            set {
+                this["Timer1Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Timer2Title {
+            get {
+                return ((string)(this["Timer2Title"]));
+            }
+            set {
+                this["Timer2Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Timer3Title {
+            get {
+                return ((string)(this["Timer3Title"]));
+            }
+            set {
+                this["Timer3Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Timer4Title {
+            get {
+                return ((string)(this["Timer4Title"]));
+            }
+            set {
+                this["Timer4Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Timer5Title {
+            get {
+                return ((string)(this["Timer5Title"]));
+            }
+            set {
+                this["Timer5Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Timer6Title {
+            get {
+                return ((string)(this["Timer6Title"]));
+            }
+            set {
+                this["Timer6Title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool celsiusSelected {
+            get {
+                return ((bool)(this["celsiusSelected"]));
+            }
+            set {
+                this["celsiusSelected"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Location {
+            get {
+                return ((string)(this["Location"]));
+            }
+            set {
+                this["Location"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Name {
+            get {
+                return ((string)(this["Name"]));
+            }
+            set {
+                this["Name"] = value;
+            }
+        }
     }
 }

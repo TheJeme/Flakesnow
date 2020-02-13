@@ -18,7 +18,7 @@ using System.Windows.Shapes;
 using System.Xml;
 using System.Diagnostics;
 using Flakesnow.Properties;
-
+using System.Windows.Threading;
 
 namespace Flakesnow
 {
@@ -30,6 +30,11 @@ namespace Flakesnow
         public MainWindow()
         {
             InitializeComponent();
+
+            DispatcherTimer dt = new DispatcherTimer();
+            dt.Interval = TimeSpan.FromSeconds(1);
+            dt.Tick += dtTicker;
+            dt.Start();
 
             txtTimeTemps.Add(txtTimeTemp1);
             txtTimeTemps.Add(txtTimeTemp2);
@@ -53,14 +58,15 @@ namespace Flakesnow
             int hourNow = timeNow.Hour;
 
             if (hourNow >= 5 && hourNow < 12)
-                txtGood.Content = "Good morning, Jeme";
+                txtGood.Content = "Good morning " + Settings.Default["Name"];
             else if (hourNow >= 12 && hourNow < 18)
-                txtGood.Content = "Good afternoon, Jeme";
+                txtGood.Content = "Good afternoon " + Settings.Default["Name"];
             else if (hourNow >= 18 || hourNow < 5)
-                txtGood.Content = "Good evening, Jeme";
+                txtGood.Content = "Good evening " + Settings.Default["Name"];
             else
                 txtGood.Content = hourNow;
         }
+
 
 
         const string weatherApiKey = "e238f11ff8bb1b9c19d97a11ba1b3c17";
@@ -74,21 +80,6 @@ namespace Flakesnow
             "q=@LOC@&mode=xml&units=@unit@&APPID=" + weatherApiKey;
 
         string unitSystem = "metric";
-        bool celsiusSelected = true;
-
-        bool changedReminder1Text;
-        bool changedReminder2Text;
-        bool changedReminder3Text;
-        bool changedReminder4Text;
-        bool changedReminder5Text;
-        bool changedReminder6Text;
-
-        bool changedReminder1Title;
-        bool changedReminder2Title;
-        bool changedReminder3Title;
-        bool changedReminder4Title;
-        bool changedReminder5Title;
-        bool changedReminder6Title;
 
         List<TextBlock> txtTimeTemps = new List<TextBlock>();
         List<Image> txtTimeSymbols = new List<Image>();
@@ -123,7 +114,7 @@ namespace Flakesnow
             CelsiusButton.Background = Brushes.White;
             FahrenheitButton.Background = Brushes.LightGray;
 
-            celsiusSelected = true;
+            Settings.Default["celsiusSelected"] = true;
             unitSystem = "metric";
         }
 
@@ -132,7 +123,7 @@ namespace Flakesnow
             CelsiusButton.Background = Brushes.LightGray;
             FahrenheitButton.Background = Brushes.White;
 
-            celsiusSelected = false;
+            Settings.Default["celsiusSelected"] = false;
             unitSystem = "imperial";
         }
         
@@ -145,11 +136,11 @@ namespace Flakesnow
             int hourNow = timeNow.Hour;
 
             if (hourNow >= 5 && hourNow < 12)
-                txtGood.Content = "Good morning, Jeme";
+                txtGood.Content = "Good morning " + Settings.Default["Name"];
             else if (hourNow >= 12 && hourNow < 18)
-                txtGood.Content = "Good afternoon, Jeme";
+                txtGood.Content = "Good afternoon " + Settings.Default["Name"];
             else if (hourNow >= 18 || hourNow < 5)
-                txtGood.Content = "Good evening, Jeme";
+                txtGood.Content = "Good evening " + Settings.Default["Name"];
             else
                 txtGood.Content = hourNow;
         }
@@ -157,7 +148,38 @@ namespace Flakesnow
         private void border2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             HideGrids();
-            StatsGrid.Visibility = Visibility.Visible;
+            TimerGrid.Visibility = Visibility.Visible;
+
+            if(Convert.ToBoolean(Settings.Default["Timer1Active"]) == true)
+            {
+                Timer1.Visibility = Visibility.Visible;
+                Timer1Title.Content = Settings.Default["Timer1Title"];
+            }
+            if (Convert.ToBoolean(Settings.Default["Timer2Active"]) == true)
+            {
+                Timer2.Visibility = Visibility.Visible;
+                Timer2Title.Content = Settings.Default["Timer2Title"];
+            }
+            if (Convert.ToBoolean(Settings.Default["Timer3Active"]) == true)
+            {
+                Timer3.Visibility = Visibility.Visible;
+                Timer3Title.Content = Settings.Default["Timer3Title"];
+            }
+            if (Convert.ToBoolean(Settings.Default["Timer4Active"]) == true)
+            {
+                Timer4.Visibility = Visibility.Visible;
+                Timer4Title.Content = Settings.Default["Timer4Title"];
+            }
+            if (Convert.ToBoolean(Settings.Default["Timer5Active"]) == true)
+            {
+                Timer5.Visibility = Visibility.Visible;
+                Timer5Title.Content = Settings.Default["Timer5Title"];
+            }
+            if (Convert.ToBoolean(Settings.Default["Timer6Active"]) == true)
+            {
+                Timer6.Visibility = Visibility.Visible;
+                Timer6Title.Content = Settings.Default["Timer6Title"];
+            }
         }
 
         private void border3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -212,9 +234,25 @@ namespace Flakesnow
             HideGrids();
             WeatherGrid.Visibility = Visibility.Visible;
 
+            if (Convert.ToBoolean(Settings.Default["celsiusSelected"]))
+            {
+                txtDegrees.Content += "°C";
+                unitSystem = "metric";
+                CelsiusButton.Background = Brushes.White;
+                FahrenheitButton.Background = Brushes.LightGray;
+            }
+            else
+            {
+                txtDegrees.Content += "°F";
+                unitSystem = "imperial";
+                CelsiusButton.Background = Brushes.LightGray;
+                FahrenheitButton.Background = Brushes.White;
+            }
 
+
+            
             // Compose the query URL.
-            string url = ForecastUrl.Replace("@LOC@", txtLocation.Text);
+            string url = ForecastUrl.Replace("@LOC@", Settings.Default["Location"].ToString());
             url = url.Replace("@unit@", unitSystem);
             // url = url.Replace("@QUERY@", QueryCodes[cboQuery.SelectedIndex]);
 
@@ -242,6 +280,9 @@ namespace Flakesnow
         {
             HideGrids();
             ConfigureGrid.Visibility = Visibility.Visible;
+
+            txtName.Text = Settings.Default["Name"].ToString();
+            txtLocation.Text = Settings.Default["Location"].ToString();
         }
 
         private void AddNewReminder_Button(object sender, MouseButtonEventArgs e)
@@ -301,169 +342,387 @@ namespace Flakesnow
         {
             Reminder1.Visibility = Visibility.Collapsed;
             Settings.Default["Reminder1Active"] = false;
+            Settings.Default["changedReminder1Text"] = false;
+            Settings.Default["changedReminder1Title"] = false;
             Settings.Default.Save();
-            changedReminder1Title = false;
-            changedReminder1Text = false;
         }
 
         private void DeleteReminder2_Button(object sender, MouseButtonEventArgs e)
         {
             Reminder2.Visibility = Visibility.Collapsed;
             Settings.Default["Reminder2Active"] = false;
+            Settings.Default["changedReminder2Text"] = false;
+            Settings.Default["changedReminder2Title"] = false;
             Settings.Default.Save();
-            changedReminder2Title = false;
-            changedReminder2Text = false;
         }
 
         private void DeleteReminder3_Button(object sender, MouseButtonEventArgs e)
         {
             Reminder3.Visibility = Visibility.Collapsed;
             Settings.Default["Reminder3Active"] = false;
+            Settings.Default["changedReminder3Text"] = false;
+            Settings.Default["changedReminder3Title"] = false;
             Settings.Default.Save();
-            changedReminder3Title = false;
-            changedReminder3Text = false;
         }
 
         private void DeleteReminder4_Button(object sender, MouseButtonEventArgs e)
         {
             Reminder4.Visibility = Visibility.Collapsed;
             Settings.Default["Reminder4Active"] = false;
+            Settings.Default["changedReminder4Text"] = false;
+            Settings.Default["changedReminder4Title"] = false;
             Settings.Default.Save();
-            changedReminder4Title = false;
-            changedReminder4Text = false;
         }
 
         private void DeleteReminder5_Button(object sender, MouseButtonEventArgs e)
         {
             Reminder5.Visibility = Visibility.Collapsed;
             Settings.Default["Reminder5Active"] = false;
+            Settings.Default["changedReminder5Text"] = false;
+            Settings.Default["changedReminder5Title"] = false;
             Settings.Default.Save();
-            changedReminder5Title = false;
-            changedReminder5Text = false;
         }
 
         private void DeleteReminder6_Button(object sender, MouseButtonEventArgs e)
         {
             Reminder6.Visibility = Visibility.Collapsed;
             Settings.Default["Reminder6Active"] = false;
+            Settings.Default["changedReminder6Text"] = false;
+            Settings.Default["changedReminder6Title"] = false;
             Settings.Default.Save();
-            changedReminder6Title = false;
-            changedReminder6Text = false;
         }
 
         private void Reminder1Title_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!changedReminder1Title)
+            if (!Convert.ToBoolean(Settings.Default["changedReminder1Title"]))
             {
                 Reminder1Title.Text = "";
-                changedReminder1Title = true;
+                Settings.Default["changedReminder1Title"] = true;
             }
         }
 
         private void Reminder1Text_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!changedReminder1Text)
+            if (!Convert.ToBoolean(Settings.Default["changedReminder1Text"]))
             {
                 Reminder1Text.Text = "";
-                changedReminder1Text = true;
+                Settings.Default["changedReminder1Text"] = true;
             }
         }
 
         private void Reminder2Title_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!changedReminder2Title)
+            if (!Convert.ToBoolean(Settings.Default["changedReminder2Title"]))
             {
                 Reminder2Title.Text = "";
-                changedReminder2Title = true;
+                Settings.Default["changedReminder2Title"] = true;
             }
         }
 
         private void Reminder2Text_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!changedReminder2Text)
+            if (!Convert.ToBoolean(Settings.Default["changedReminder2Text"]))
             {
                 Reminder2Text.Text = "";
-                changedReminder2Text = true;
+                Settings.Default["changedReminder2Text"] = true;
             }
         }
 
         private void Reminder3Title_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!changedReminder3Title)
+            if (!Convert.ToBoolean(Settings.Default["changedReminder3Title"]))
             {
                 Reminder3Title.Text = "";
-                changedReminder3Title = true;
+                Settings.Default["changedReminder3Title"] = true;
             }
         }
 
         private void Reminder3Text_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!changedReminder3Text)
+            if (!Convert.ToBoolean(Settings.Default["changedReminder3Text"]))
             {
                 Reminder3Text.Text = "";
-                changedReminder3Text = true;
+                Settings.Default["changedReminder3Text"] = true;
             }
         }
 
         private void Reminder4Title_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!changedReminder4Title)
+            if (!Convert.ToBoolean(Settings.Default["changedReminder4Title"]))
             {
                 Reminder4Title.Text = "";
-                changedReminder4Title = true;
+                Settings.Default["changedReminder4Title"] = true;
             }
         }
 
         private void Reminder4Text_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!changedReminder4Text)
+            if (!Convert.ToBoolean(Settings.Default["changedReminder4Text"]))
             {
                 Reminder4Text.Text = "";
-                changedReminder4Text = true;
+                Settings.Default["changedReminder4Text"] = true;
             }
         }
 
         private void Reminder5Title_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!changedReminder5Title)
+            if (!Convert.ToBoolean(Settings.Default["changedReminder5Title"]))
             {
                 Reminder5Title.Text = "";
-                changedReminder5Title = true;
+                Settings.Default["changedReminder5Title"] = true;
             }
         }
 
         private void Reminder5Text_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!changedReminder5Text)
+            if (!Convert.ToBoolean(Settings.Default["changedReminder5Text"]))
             {
                 Reminder5Text.Text = "";
-                changedReminder5Text = true;
+                Settings.Default["changedReminder5Text"] = true;
             }
         }
 
         private void Reminder6Title_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!changedReminder6Title)
+            if (!Convert.ToBoolean(Settings.Default["changedReminder6Title"]))
             {
                 Reminder6Title.Text = "";
-                changedReminder6Title = true;
+                Settings.Default["changedReminder6Title"] = true;
             }
         }
 
         private void Reminder6Text_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!changedReminder6Text)
+            if (!Convert.ToBoolean(Settings.Default["changedReminder6Text"]))
             {
                 Reminder6Text.Text = "";
-                changedReminder6Text = true;
+                Settings.Default["changedReminder6Text"] = true;
             }
         }
 
+        private void DeleteTimer1_Button(object sender, RoutedEventArgs e)
+        {
+            Timer1.Visibility = Visibility.Collapsed;
+            Settings.Default["Timer1Active"] = false;
+        }
+        private void DeleteTimer2_Button(object sender, RoutedEventArgs e)
+        {
+            Timer2.Visibility = Visibility.Collapsed;
+            Settings.Default["Timer2Active"] = false;
+        }
+        private void DeleteTimer3_Button(object sender, RoutedEventArgs e)
+        {
+            Timer3.Visibility = Visibility.Collapsed;
+            Settings.Default["Timer3Active"] = false;
+        }
+        private void DeleteTimer4_Button(object sender, RoutedEventArgs e)
+        {
+            Timer4.Visibility = Visibility.Collapsed;
+            Settings.Default["Timer4Active"] = false;
+        }
+        private void DeleteTimer5_Button(object sender, RoutedEventArgs e)
+        {
+            Timer5.Visibility = Visibility.Collapsed;
+            Settings.Default["Timer5Active"] = false;
+        }
+        private void DeleteTimer6_Button(object sender, RoutedEventArgs e)
+        {
+            Timer6.Visibility = Visibility.Collapsed;
+            Settings.Default["Timer6Active"] = false;
+        }
+
+        private void dtTicker(object sender, EventArgs e)
+        {
+            if (Convert.ToBoolean(Settings.Default["Timer1Active"]) == true)
+            {
+                Timer1Days.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer1"]) - DateTime.Now).Days.ToString();
+                Timer1Hours.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer1"]) - DateTime.Now).Hours.ToString();
+                Timer1Minutes.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer1"]) - DateTime.Now).Minutes.ToString();
+                Timer1Seconds.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer1"]) - DateTime.Now).Seconds.ToString();
+            }
+            if (Convert.ToBoolean(Settings.Default["Timer2Active"]) == true)
+            {
+                Timer2Days.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer2"]) - DateTime.Now).Days.ToString();
+                Timer2Hours.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer2"]) - DateTime.Now).Hours.ToString();
+                Timer2Minutes.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer2"]) - DateTime.Now).Minutes.ToString();
+                Timer2Seconds.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer2"]) - DateTime.Now).Seconds.ToString();
+            }
+            if (Convert.ToBoolean(Settings.Default["Timer3Active"]) == true)
+            {
+                Timer3Days.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer3"]) - DateTime.Now).Days.ToString();
+                Timer3Hours.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer3"]) - DateTime.Now).Hours.ToString();
+                Timer3Minutes.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer3"]) - DateTime.Now).Minutes.ToString();
+                Timer3Seconds.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer3"]) - DateTime.Now).Seconds.ToString();
+            }
+            if (Convert.ToBoolean(Settings.Default["Timer4Active"]) == true)
+            {
+                Timer4Days.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer4"]) - DateTime.Now).Days.ToString();
+                Timer4Hours.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer4"]) - DateTime.Now).Hours.ToString();
+                Timer4Minutes.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer4"]) - DateTime.Now).Minutes.ToString();
+                Timer4Seconds.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer4"]) - DateTime.Now).Seconds.ToString();
+            }
+            if (Convert.ToBoolean(Settings.Default["Timer5Active"]) == true)
+            {
+                Timer5Days.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer5"]) - DateTime.Now).Days.ToString();
+                Timer5Hours.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer5"]) - DateTime.Now).Hours.ToString();
+                Timer5Minutes.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer5"]) - DateTime.Now).Minutes.ToString();
+                Timer5Seconds.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer5"]) - DateTime.Now).Seconds.ToString();
+            }
+            if (Convert.ToBoolean(Settings.Default["Timer6Active"]) == true)
+            {
+                Timer6Days.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer6"]) - DateTime.Now).Days.ToString();
+                Timer6Hours.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer6"]) - DateTime.Now).Hours.ToString();
+                Timer6Minutes.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer6"]) - DateTime.Now).Minutes.ToString();
+                Timer6Seconds.Content = (Convert.ToDateTime(Settings.Default["targetDateOnTimer6"]) - DateTime.Now).Seconds.ToString();
+            }
+        }
+
+        private void txtName_TextChanged(object sender, RoutedEventArgs e)
+        {
+            Settings.Default["Name"] = txtName.Text;
+            Settings.Default.Save();
+        }
+
+        private void txtLocation_TextChanged(object sender, RoutedEventArgs e)
+        {
+            Settings.Default["Location"] = txtLocation.Text;
+            Settings.Default.Save();
+        }
+
+        private void ConfirmCreateNewTimer_Button(object sender, RoutedEventArgs e)
+        {
+            CreateNewTimer_Grid.Visibility = Visibility.Collapsed;
+
+            int tempHours = Convert.ToInt16(HoursBox.SelectionBoxItem);
+            int tempMinutes = Convert.ToInt16(MinutesBox.SelectionBoxItem);
+            int tempSeconds = Convert.ToInt16(SecondsBox.SelectionBoxItem);
+
+            DateTime targetDateOnTimer = DateTime.Now;
+
+            if(Countdown_Stackpanel1.Visibility == Visibility.Visible)
+            {
+                targetDateOnTimer = DateTime.Now.AddHours(tempHours).AddMinutes(tempMinutes).AddSeconds(tempSeconds);
+            }
+            else if(CountTillDate_Stackpanel.Visibility == Visibility.Visible)
+            {
+                targetDateOnTimer = CountTillDate.SelectedDate.Value;
+            }
+            
+            if (targetDateOnTimer.Hour >= 24)
+            {
+                targetDateOnTimer.AddHours(-24);
+                targetDateOnTimer.AddDays(1);
+
+            }
+            else if (targetDateOnTimer.Hour >= 48)
+            {
+                targetDateOnTimer.AddHours(-48);
+                targetDateOnTimer.AddDays(2);
+
+            }
+
+            if (Convert.ToBoolean(Settings.Default["Timer1Active"]) == false)
+            {
+                Settings.Default["targetDateOnTimer1"] = targetDateOnTimer;
+                Timer1.Visibility = Visibility.Visible;
+                Timer1Title.Content = Settings.Default["Timer1Title"] = CreateNewTimerTitle.Text;
+                Settings.Default["Timer1Active"] = true;
+            }
+            else if (Convert.ToBoolean(Settings.Default["Timer2Active"]) == false)
+            {
+                Settings.Default["targetDateOnTimer2"] = targetDateOnTimer;
+                Timer2.Visibility = Visibility.Visible;
+                Timer2Title.Content = Settings.Default["Timer2Title"] = CreateNewTimerTitle.Text;
+                Settings.Default["Timer2Active"] = true;
+            }
+            else if (Convert.ToBoolean(Settings.Default["Timer3Active"]) == false)
+            {
+                Settings.Default["targetDateOnTimer3"] = targetDateOnTimer;
+                Timer3.Visibility = Visibility.Visible;
+                Timer3Title.Content = Settings.Default["Timer3Title"] = CreateNewTimerTitle.Text;
+                Settings.Default["Timer3Active"] = true;
+            }
+            else if (Convert.ToBoolean(Settings.Default["Timer4Active"]) == false)
+            {
+                Settings.Default["targetDateOnTimer4"] = targetDateOnTimer;
+                Timer4.Visibility = Visibility.Visible;
+                Timer4Title.Content = Settings.Default["Timer4Title"] = CreateNewTimerTitle.Text;
+                Settings.Default["Timer4Active"] = true;
+            }
+            else if (Convert.ToBoolean(Settings.Default["Timer5Active"]) == false)
+            {
+                Settings.Default["targetDateOnTimer5"] = targetDateOnTimer;
+                Timer5.Visibility = Visibility.Visible;
+                Timer5Title.Content = Settings.Default["Timer5Title"] = CreateNewTimerTitle.Text;
+                Settings.Default["Timer5Active"] = true;
+            }
+            else if (Convert.ToBoolean(Settings.Default["Timer6Active"]) == false)
+            {
+                Settings.Default["targetDateOnTimer6"] = targetDateOnTimer;
+                Timer6.Visibility = Visibility.Visible;
+                Timer6Title.Content = Settings.Default["Timer6Title"] = CreateNewTimerTitle.Text;
+                Settings.Default["Timer6Active"] = true;
+            }
+
+            ResetCreateTimerSettings();
+        }   
+        
+
+
+        private void HideCreateNewTimer_Button(object sender, RoutedEventArgs e)
+        {
+            CreateNewTimer_Grid.Visibility = Visibility.Collapsed;
+            ResetCreateTimerSettings();
+        }
+
+        private void AddNewTimer_Button(object sender, RoutedEventArgs e)
+        {
+            CreateNewTimer_Grid.Visibility = Visibility.Visible;
+        }
+
+        private void EnableCountdown_Button(object sender, RoutedEventArgs e)
+        {
+            EnableCountdown.Background = Brushes.White;
+            EnableCountTill.Background = Brushes.LightGray;
+
+            Countdown_Stackpanel1.Visibility = Visibility.Visible;
+            Countdown_Stackpanel2.Visibility = Visibility.Visible;
+
+            CountTillDate_Stackpanel.Visibility = Visibility.Collapsed;
+        }
+
+        private void EnableCountTill_Button(object sender, RoutedEventArgs e)
+        {
+            EnableCountdown.Background = Brushes.LightGray;
+            EnableCountTill.Background = Brushes.White;
+
+            Countdown_Stackpanel1.Visibility = Visibility.Collapsed;
+            Countdown_Stackpanel2.Visibility = Visibility.Collapsed;
+
+            CountTillDate_Stackpanel.Visibility = Visibility.Visible;
+        }
+
+        private void ResetCreateTimerSettings()
+        {
+            EnableCountdown.Background = Brushes.White;
+            EnableCountTill.Background = Brushes.LightGray;
+
+            Countdown_Stackpanel1.Visibility = Visibility.Visible;
+            Countdown_Stackpanel2.Visibility = Visibility.Visible;
+
+            CountTillDate_Stackpanel.Visibility = Visibility.Collapsed;
+
+            CreateNewTimerTitle.Text = "";
+            HoursBox.SelectedIndex = 0;
+            MinutesBox.SelectedIndex = 0;
+            SecondsBox.SelectedIndex = 0;
+            CountTillDate.Text = "";
+        }
 
         private void HideGrids()
         {
             HomeGrid.Visibility = Visibility.Hidden;
-            StatsGrid.Visibility = Visibility.Hidden;
+            TimerGrid.Visibility = Visibility.Hidden;
             RemindersGrid.Visibility = Visibility.Hidden;
             WeatherGrid.Visibility = Visibility.Hidden;
             ConfigureGrid.Visibility = Visibility.Hidden;
@@ -484,10 +743,14 @@ namespace Flakesnow
             txtSymbol.Content = xml_doc.SelectSingleNode("//time/symbol").Attributes["name"].Value;
             txtCity.Content = loc_node.SelectSingleNode("name").InnerText + ", " + loc_node.SelectSingleNode("country").InnerText;
             txtDegrees.Content = temperature;
-            if(celsiusSelected)
+            if (Convert.ToBoolean(Settings.Default["celsiusSelected"]))
+            {
                 txtDegrees.Content += "°C";
+            }
             else
+            {
                 txtDegrees.Content += "°F";
+            }
 
 
             for(int i = 0; i < 8; i++)
@@ -508,7 +771,7 @@ namespace Flakesnow
 
                 txtTimeTemps[i].Text = time.ToShortTimeString() + "\n";
                 txtTimeTemps[i].Text += temp.Split('.')[0].Trim();
-                if (celsiusSelected)
+                if (Convert.ToBoolean(Settings.Default["celsiusSelected"]))
                     txtTimeTemps[i].Text += "°C";
                 else
                     txtTimeTemps[i].Text += "°F";
@@ -578,15 +841,17 @@ namespace Flakesnow
         {
             if(e.ClickCount >= 2)
             {
-                Process.Start(@"D:\KOODAUS\C#\Work In Progress\Noodes\Noodes\bin\Release\Noodes.exe");
-            }
+                var noodes = new Noodes();
+                noodes.Show();
+            } 
         }
 
         private void App2Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ClickCount >= 2)
             {
-                Process.Start(@"D:\KOODAUS\C#\Work In Progress\Noodes\Noodes\bin\Release\Noodes.exe");
+                var colorpicker = new Colorpicker();
+                colorpicker.Show();
             }
         }
 
@@ -602,7 +867,8 @@ namespace Flakesnow
         {
             if (e.ClickCount >= 2)
             {
-                Process.Start(@"D:\KOODAUS\C#\Work In Progress\Noodes\Noodes\bin\Release\Noodes.exe");
+                var timer = new Timer();
+                timer.Show();
             }
         }
 

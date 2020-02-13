@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         WindowStyle="None" 
         AllowsTransparency="True"
-        WindowState="Maximized"
         Background="#f7f7f7"
+        Title="Flakesnow"
         Icon="Resources/snowflake-icon.ico"
         Height="750" Width="1200" MinHeight="750" MinWidth="1200" StateChanged="Window_StateChanged" Closing="Window_Closing">
     <WindowChrome.WindowChrome>
         <WindowChrome
-        CaptionHeight="14"  
+        CaptionHeight="14"
         CornerRadius="0"
         ResizeBorderThickness="5"         
         GlassFrameThickness="0">
@@ -30,30 +30,22 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Rectangle Fill="#8b35c2" Grid.Row="0" Grid.Column="1" Width="Auto" Height="Auto"/>
-        <Rectangle Fill="#8b35c2" Grid.Row="0" Grid.Column="0" Width="Auto" Height="Auto"/>
-        <Label Grid.Row="0" Width="40" Grid.Column="1" Content="x" FontSize="24" HorizontalAlignment="right" HorizontalContentAlignment="Center" VerticalAlignment="Top" MouseLeftButtonDown="quit_Button"/>
-        <Label Grid.Row="0" Width="40" Grid.Column="1" Content="__" FontSize="24" HorizontalAlignment="right" HorizontalContentAlignment="Center" Margin="41,0" VerticalAlignment="Top" MouseLeftButtonDown="hideWindow_Button"/>
+        <Rectangle Fill="#202225" Grid.Row="0" Grid.Column="1" Width="Auto" Height="Auto"/>
+        <Rectangle Fill="#202225" Grid.Row="0" Grid.Column="0" Width="Auto" Height="Auto"/>
+        <Label Content="Flakesnow" Grid.Row="0" Grid.Column="0" Foreground="White" FontSize="24" Margin="20,0"/>
+        <Label Grid.Row="0" Foreground="White" Width="40" Grid.Column="1" Content="x" FontSize="24" HorizontalAlignment="right" HorizontalContentAlignment="Center" VerticalAlignment="Top" MouseLeftButtonDown="quit_Button"/>
+        <Label Grid.Row="0" Foreground="White" Width="40" Grid.Column="1" Content="__" FontSize="24" HorizontalAlignment="right" HorizontalContentAlignment="Center" Margin="41,0" VerticalAlignment="Top" MouseLeftButtonDown="hideWindow_Button"/>
 
         <Rectangle Fill="#2d2d30" Grid.Row="1" Grid.Column="0" Width="300" Height="Auto"/>
 
         <StackPanel Orientation="Vertical" Grid.Row="1">
 
-            <Border Background="RoyalBlue" Margin="0,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Width="300" Height="120">
-                <Label Content="Flakesnow" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="28"/>
-            </Border>
-            
-            <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border1_MouseLeftButtonDown">
+
+
+            <Border Background="#e33b29" CornerRadius="20" Margin="0,40,0,20" Width="280" Height="70" MouseLeftButtonDown="border1_MouseLeftButtonDown">
                 <StackPanel Orientation="Horizontal">
                     <Image Grid.Column="1" Source="Resources/house.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
                     <Label Foreground="White" Content="Home" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Border>
-
-            <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border2_MouseLeftButtonDown">
-                <StackPanel Orientation="Horizontal">
-                    <Image Grid.Column="1" Source="Resources/id-card.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
-                    <Label Foreground="White" Content="Stats" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
 
@@ -63,7 +55,14 @@
                     <Label Foreground="White" Content="Weather" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
-            
+
+            <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border2_MouseLeftButtonDown">
+                <StackPanel Orientation="Horizontal">
+                    <Image Grid.Column="1" Source="Resources/hourglass.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
+                    <Label Foreground="White" Content="Timers" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+
             <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border3_MouseLeftButtonDown">
                 <StackPanel Orientation="Horizontal">
                     <Image Grid.Column="1" Source="Resources/checklist.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
@@ -86,28 +85,417 @@
 
             <Label Foreground="White" FontSize="32" Margin="80,10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Home"/>
 
-            <Border Background="#e33b29" MaxWidth="850" CornerRadius="10" Margin="120,90" VerticalAlignment="Top" Height="80">
+            <Border Background="#e33b29" MaxWidth="850" CornerRadius="10" Margin="90,90" VerticalAlignment="Top" Height="80">
                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                    <Label x:Name="txtGood" Foreground="White" FontSize="32" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Good morning, Jeme" Margin="175,0,176,0"/>
+                    <Label x:Name="txtGood" Foreground="White" FontSize="32" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Good morning, Jeme"/>
                 </StackPanel>
             </Border>
             
             <Label Foreground="White" FontSize="32" Margin="0,210" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Apps"/>
-            <Border Background="#e33b29" MaxWidth="850" CornerRadius="10" Margin="120,280,120,0" VerticalAlignment="Top" Height="180">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image x:Name="App1Image" Source="Resources/noodes1.png" Margin="30,0" Width="100" Height="100" MouseDown="App1Image_MouseDown"/>
-                    <Image x:Name="App2Image" Source="Resources/steam-icon.png" Margin="30,0" Width="100" Height="100" MouseDown="App2Image_MouseDown"/>
-                    <Image x:Name="App3Image" Source="Resources/discord-icon.png" Margin="30,0" Width="100" Height="100" MouseDown="App3Image_MouseDown"/>
-                    <Image x:Name="App4Image" Source="Resources/google-icon.png" Margin="30,0" Width="100" Height="100" MouseDown="App4Image_MouseDown"/>
+            <Border Background="#e33b29" MaxWidth="850" CornerRadius="10" Margin="90,280,90,0" VerticalAlignment="Top" Height="220">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image x:Name="App1Image" Source="Resources/noodes.png" Margin="27,0" Width="120" Height="120" MouseDown="App1Image_MouseDown"/>
+                        <Image x:Name="App2Image" Source="Resources/color-picker.png" Margin="27,0" Width="120" Height="120" MouseDown="App2Image_MouseDown"/>
+                        <Image x:Name="App3Image" Source="Resources/calculator-icon.png" Margin="27,0" Width="120" Height="120" MouseDown="App3Image_MouseDown"/>
+                        <Image x:Name="App4Image" Source="Resources/timer.png" Margin="27,0" Width="120" Height="120" MouseDown="App4Image_MouseDown"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="25" Width="120" Margin="27,10" Content="Notes"/>
+                        <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="25" Width="120" Margin="27,10" Content="Colorpick"/>
+                        <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="25" Width="120" Margin="27,10" Content="Calculator"/>
+                        <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="25" Width="120" Margin="27,10" Content="Timer"/>
+                    </StackPanel>
                 </StackPanel>
             </Border>
 
         </Grid>
 
-        <Grid x:Name="StatsGrid" Visibility="Collapsed" Background="#36393f" Grid.Row="1" Grid.Column="1">
+        <Grid x:Name="TimerGrid" Visibility="Collapsed" Background="#36393f" Grid.Row="1" Grid.Column="1">
 
-            <Label Foreground="White" FontSize="32" Margin="80,10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Stats"/>
+            <Label Foreground="White" FontSize="32" Margin="80,10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Timers"/>
 
+            <Border CornerRadius="64" Background="#e33b29" Margin="55,55" Width="60" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Right" MouseLeftButtonDown="AddNewTimer_Button">
+                <Label Content="+" Margin="0,-16,0,13" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="52" Foreground="White"/>
+            </Border>
+
+
+
+
+            <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalAlignment="Center" Margin="120,70,120,70" VerticalAlignment="Top">
+
+                <StackPanel Orientation="Vertical">
+
+                    <Border x:Name="Timer1" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteTimer1_Button"/>
+                            <Label x:Name="Timer1Title" Content="" Width="500" Foreground="White" Margin="70,-30" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,20">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label x:Name="Timer1Days" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer1Hours" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer1Minutes" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer1Seconds" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Days"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Hours"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Minutes"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Seconds"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border x:Name="Timer2" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteTimer2_Button"/>
+                            <Label x:Name="Timer2Title" Content="" Width="500" Foreground="White" Margin="70,-30" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,20">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label x:Name="Timer2Days" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer2Hours" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer2Minutes" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer2Seconds" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Days"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Hours"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Minutes"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Seconds"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border x:Name="Timer3" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteTimer3_Button"/>
+                            <Label x:Name="Timer3Title" Content="" Width="500" Foreground="White" Margin="70,-30" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,20">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label x:Name="Timer3Days" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer3Hours" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer3Minutes" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer3Seconds" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Days"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Hours"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Minutes"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Seconds"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border x:Name="Timer4" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteTimer4_Button"/>
+                            <Label x:Name="Timer4Title" Content="" Width="500" Foreground="White" Margin="70,-30" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,20">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label x:Name="Timer4Days" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer4Hours" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer4Minutes" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer4Seconds" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Days"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Hours"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Minutes"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Seconds"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border x:Name="Timer5" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteTimer5_Button"/>
+                            <Label x:Name="Timer5Title" Content="" Width="500" Foreground="White" Margin="70,-30" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,20">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label x:Name="Timer5Days" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer5Hours" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer5Minutes" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer5Seconds" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Days"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Hours"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Minutes"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Seconds"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border x:Name="Timer6" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20">
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteTimer6_Button"/>
+                            <Label x:Name="Timer6Title" Content="" Width="500" Foreground="White" Margin="70,-30" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,20">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label x:Name="Timer6Days" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer6Hours" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer6Minutes" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                    <Label x:Name="Timer6Seconds" Foreground="White" HorizontalContentAlignment="Center" FontSize="32" Width="110" Content="0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Days"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Hours"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Minutes"/>
+                                    <Label Foreground="White" HorizontalContentAlignment="Center" FontSize="22" Width="110" Margin="0,-10,0,0" Content="Seconds"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                </StackPanel>
+            </ScrollViewer>
+
+
+            <Grid Visibility="Collapsed" x:Name="CreateNewTimer_Grid">
+                <Rectangle Fill="Black" Opacity="0.6"/>
+                <Border Visibility="Visible" Background="#e33b29" CornerRadius="10" Margin="150,150" MaxHeight="450" MaxWidth="600">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="HideCreateNewTimer_Button"/>
+                        <Label Content="Create new timer" Foreground="White" FontSize="38" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
+
+                            <Border x:Name="EnableCountdown" Background="White" CornerRadius="10" Margin="30,0" VerticalAlignment="Center" MouseLeftButtonDown="EnableCountdown_Button">
+                                <Label FontSize="20" Foreground="#7289da" Content="Countdown" HorizontalContentAlignment="Center" Width="140" VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <Border x:Name="EnableCountTill" Background="LightGray" CornerRadius="10" Margin="30,0" VerticalAlignment="Center" MouseLeftButtonDown="EnableCountTill_Button">
+                                <Label FontSize="20" Foreground="#7289da" Content="Count till date" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            </Border>
+                        </StackPanel>
+
+
+                        <StackPanel x:Name="Countdown_Stackpanel1" Visibility="Visible" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Label Foreground="White" FontSize="18" Margin="50,0" Width="80" Content="Hours" HorizontalContentAlignment="Center"/>
+                            <Label Foreground="White" FontSize="18" Margin="50,0" Width="80" Content="Minutes" HorizontalContentAlignment="Center"/>
+                            <Label Foreground="White" FontSize="18" Margin="50,0" Width="80" Content="Seconds" HorizontalContentAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel x:Name="Countdown_Stackpanel2" Visibility="Visible" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Border Background="#eaeaea" CornerRadius="10" Margin="50,0" Width="80">
+                                <ComboBox x:Name="HoursBox" Foreground="#7289da" MaxDropDownHeight="280" FontSize="16" BorderThickness="0" Width="50" SelectedIndex="0">
+                                    <ComboBoxItem Content="00"/>
+                                    <ComboBoxItem Content="01"/>
+                                    <ComboBoxItem Content="02"/>
+                                    <ComboBoxItem Content="03"/>
+                                    <ComboBoxItem Content="04"/>
+                                    <ComboBoxItem Content="05"/>
+                                    <ComboBoxItem Content="06"/>
+                                    <ComboBoxItem Content="07"/>
+                                    <ComboBoxItem Content="08"/>
+                                    <ComboBoxItem Content="09"/>
+                                    <ComboBoxItem Content="10"/>
+                                    <ComboBoxItem Content="11"/>
+                                    <ComboBoxItem Content="12"/>
+                                    <ComboBoxItem Content="13"/>
+                                    <ComboBoxItem Content="14"/>
+                                    <ComboBoxItem Content="15"/>
+                                    <ComboBoxItem Content="16"/>
+                                    <ComboBoxItem Content="17"/>
+                                    <ComboBoxItem Content="18"/>
+                                    <ComboBoxItem Content="19"/>
+                                    <ComboBoxItem Content="20"/>
+                                    <ComboBoxItem Content="21"/>
+                                    <ComboBoxItem Content="22"/>
+                                    <ComboBoxItem Content="23"/>
+                                    <ComboBoxItem Content="24"/>
+                                    <ComboBoxItem Content="25"/>
+                                    <ComboBoxItem Content="26"/>
+                                    <ComboBoxItem Content="27"/>
+                                    <ComboBoxItem Content="28"/>
+                                    <ComboBoxItem Content="29"/>
+                                    <ComboBoxItem Content="30"/>
+                                    <ComboBoxItem Content="31"/>
+                                    <ComboBoxItem Content="32"/>
+                                    <ComboBoxItem Content="33"/>
+                                    <ComboBoxItem Content="34"/>
+                                    <ComboBoxItem Content="35"/>
+                                    <ComboBoxItem Content="36"/>
+                                    <ComboBoxItem Content="37"/>
+                                    <ComboBoxItem Content="38"/>
+                                    <ComboBoxItem Content="39"/>
+                                    <ComboBoxItem Content="40"/>
+                                    <ComboBoxItem Content="41"/>
+                                    <ComboBoxItem Content="42"/>
+                                    <ComboBoxItem Content="43"/>
+                                    <ComboBoxItem Content="44"/>
+                                    <ComboBoxItem Content="45"/>
+                                    <ComboBoxItem Content="46"/>
+                                    <ComboBoxItem Content="47"/>
+                                    <ComboBoxItem Content="48"/>
+                                    <ComboBoxItem Content="49"/>
+                                    <ComboBoxItem Content="50"/>
+                                    <ComboBoxItem Content="51"/>
+                                    <ComboBoxItem Content="52"/>
+                                    <ComboBoxItem Content="53"/>
+                                    <ComboBoxItem Content="54"/>
+                                    <ComboBoxItem Content="55"/>
+                                    <ComboBoxItem Content="56"/>
+                                    <ComboBoxItem Content="57"/>
+                                    <ComboBoxItem Content="58"/>
+                                    <ComboBoxItem Content="59"/>
+                                </ComboBox>
+                            </Border>
+
+                            <Border Background="#eaeaea" CornerRadius="10" Width="80" Margin="50,0">
+                                <ComboBox x:Name="MinutesBox" Foreground="#7289da" MaxDropDownHeight="280" FontSize="16" BorderThickness="0" Width="50" SelectedIndex="0">
+                                    <ComboBoxItem Content="00"/>
+                                    <ComboBoxItem Content="01"/>
+                                    <ComboBoxItem Content="02"/>
+                                    <ComboBoxItem Content="03"/>
+                                    <ComboBoxItem Content="04"/>
+                                    <ComboBoxItem Content="05"/>
+                                    <ComboBoxItem Content="06"/>
+                                    <ComboBoxItem Content="07"/>
+                                    <ComboBoxItem Content="08"/>
+                                    <ComboBoxItem Content="09"/>
+                                    <ComboBoxItem Content="10"/>
+                                    <ComboBoxItem Content="11"/>
+                                    <ComboBoxItem Content="12"/>
+                                    <ComboBoxItem Content="13"/>
+                                    <ComboBoxItem Content="14"/>
+                                    <ComboBoxItem Content="15"/>
+                                    <ComboBoxItem Content="16"/>
+                                    <ComboBoxItem Content="17"/>
+                                    <ComboBoxItem Content="18"/>
+                                    <ComboBoxItem Content="19"/>
+                                    <ComboBoxItem Content="20"/>
+                                    <ComboBoxItem Content="21"/>
+                                    <ComboBoxItem Content="22"/>
+                                    <ComboBoxItem Content="23"/>
+                                    <ComboBoxItem Content="24"/>
+                                    <ComboBoxItem Content="25"/>
+                                    <ComboBoxItem Content="26"/>
+                                    <ComboBoxItem Content="27"/>
+                                    <ComboBoxItem Content="28"/>
+                                    <ComboBoxItem Content="29"/>
+                                    <ComboBoxItem Content="30"/>
+                                    <ComboBoxItem Content="31"/>
+                                    <ComboBoxItem Content="32"/>
+                                    <ComboBoxItem Content="33"/>
+                                    <ComboBoxItem Content="34"/>
+                                    <ComboBoxItem Content="35"/>
+                                    <ComboBoxItem Content="36"/>
+                                    <ComboBoxItem Content="37"/>
+                                    <ComboBoxItem Content="38"/>
+                                    <ComboBoxItem Content="39"/>
+                                    <ComboBoxItem Content="40"/>
+                                    <ComboBoxItem Content="41"/>
+                                    <ComboBoxItem Content="42"/>
+                                    <ComboBoxItem Content="43"/>
+                                    <ComboBoxItem Content="44"/>
+                                    <ComboBoxItem Content="45"/>
+                                    <ComboBoxItem Content="46"/>
+                                    <ComboBoxItem Content="47"/>
+                                    <ComboBoxItem Content="48"/>
+                                    <ComboBoxItem Content="49"/>
+                                    <ComboBoxItem Content="50"/>
+                                    <ComboBoxItem Content="51"/>
+                                    <ComboBoxItem Content="52"/>
+                                    <ComboBoxItem Content="53"/>
+                                    <ComboBoxItem Content="54"/>
+                                    <ComboBoxItem Content="55"/>
+                                    <ComboBoxItem Content="56"/>
+                                    <ComboBoxItem Content="57"/>
+                                    <ComboBoxItem Content="58"/>
+                                    <ComboBoxItem Content="59"/>
+                                </ComboBox>
+                            </Border>
+
+                            <Border Background="#eaeaea" CornerRadius="10" Width="80" Margin="50,0">
+                                <ComboBox x:Name="SecondsBox" Foreground="#7289da" MaxDropDownHeight="280" FontSize="16" BorderThickness="0" Width="50" SelectedIndex="0">
+                                    <ComboBoxItem Content="00"/>
+                                    <ComboBoxItem Content="01"/>
+                                    <ComboBoxItem Content="02"/>
+                                    <ComboBoxItem Content="03"/>
+                                    <ComboBoxItem Content="04"/>
+                                    <ComboBoxItem Content="05"/>
+                                    <ComboBoxItem Content="06"/>
+                                    <ComboBoxItem Content="07"/>
+                                    <ComboBoxItem Content="08"/>
+                                    <ComboBoxItem Content="09"/>
+                                    <ComboBoxItem Content="10"/>
+                                    <ComboBoxItem Content="11"/>
+                                    <ComboBoxItem Content="12"/>
+                                    <ComboBoxItem Content="13"/>
+                                    <ComboBoxItem Content="14"/>
+                                    <ComboBoxItem Content="15"/>
+                                    <ComboBoxItem Content="16"/>
+                                    <ComboBoxItem Content="17"/>
+                                    <ComboBoxItem Content="18"/>
+                                    <ComboBoxItem Content="19"/>
+                                    <ComboBoxItem Content="20"/>
+                                    <ComboBoxItem Content="21"/>
+                                    <ComboBoxItem Content="22"/>
+                                    <ComboBoxItem Content="23"/>
+                                    <ComboBoxItem Content="24"/>
+                                    <ComboBoxItem Content="25"/>
+                                    <ComboBoxItem Content="26"/>
+                                    <ComboBoxItem Content="27"/>
+                                    <ComboBoxItem Content="28"/>
+                                    <ComboBoxItem Content="29"/>
+                                    <ComboBoxItem Content="30"/>
+                                    <ComboBoxItem Content="31"/>
+                                    <ComboBoxItem Content="32"/>
+                                    <ComboBoxItem Content="33"/>
+                                    <ComboBoxItem Content="34"/>
+                                    <ComboBoxItem Content="35"/>
+                                    <ComboBoxItem Content="36"/>
+                                    <ComboBoxItem Content="37"/>
+                                    <ComboBoxItem Content="38"/>
+                                    <ComboBoxItem Content="39"/>
+                                    <ComboBoxItem Content="40"/>
+                                    <ComboBoxItem Content="41"/>
+                                    <ComboBoxItem Content="42"/>
+                                    <ComboBoxItem Content="43"/>
+                                    <ComboBoxItem Content="44"/>
+                                    <ComboBoxItem Content="45"/>
+                                    <ComboBoxItem Content="46"/>
+                                    <ComboBoxItem Content="47"/>
+                                    <ComboBoxItem Content="48"/>
+                                    <ComboBoxItem Content="49"/>
+                                    <ComboBoxItem Content="50"/>
+                                    <ComboBoxItem Content="51"/>
+                                    <ComboBoxItem Content="52"/>
+                                    <ComboBoxItem Content="53"/>
+                                    <ComboBoxItem Content="54"/>
+                                    <ComboBoxItem Content="55"/>
+                                    <ComboBoxItem Content="56"/>
+                                    <ComboBoxItem Content="57"/>
+                                    <ComboBoxItem Content="58"/>
+                                    <ComboBoxItem Content="59"/>
+                                </ComboBox>
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel x:Name="CountTillDate_Stackpanel" Visibility="Collapsed" Orientation="Vertical" HorizontalAlignment="Center">
+                            <Label Foreground="White" FontSize="18" Width="250" HorizontalAlignment="Left" Content="Date"/>
+                            <Border Background="White" CornerRadius="10" Width="450" Height="30">
+                                <DatePicker x:Name="CountTillDate" FontSize="18" Foreground="#7289da" Margin="20,0,0,0" BorderThickness="0" VerticalAlignment="Center"/>
+                            </Border>
+
+                        </StackPanel>
+
+                        <Label Foreground="White" FontSize="18" Margin="0,20,0,10" Width="450" Height="30" Content="Title"/>
+                        <Border Background="White" CornerRadius="10" Width="450" Height="30">
+                            <TextBox x:Name="CreateNewTimerTitle" HorizontalAlignment="Left" Margin="20,0" Foreground="#7289da" VerticalAlignment="Center" Text="" FontSize="18" VerticalContentAlignment="Center" Background="White" BorderThickness="0" Width="400" MaxLength="50"/>
+                        </Border>
+
+                        <Border Background="White" CornerRadius="10" Margin="0,25" Width="150" VerticalAlignment="Center" MouseLeftButtonDown="ConfirmCreateNewTimer_Button">
+                            <Label FontSize="20" Foreground="#7289da" HorizontalContentAlignment="Center" Content="Done"/>
+                        </Border>
+
+                    </StackPanel>
+                </Border>
+            </Grid>
         </Grid>
 
         <Grid x:Name="RemindersGrid" Visibility="Collapsed" Background="#36393f" Grid.Row="1" Grid.Column="1">
@@ -127,48 +515,48 @@
                     <Border x:Name="Reminder1" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20" Height="Auto">
                         <StackPanel Orientation="Vertical">
                             <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteReminder1_Button"/>
-                            <TextBox x:Name="Reminder1Title" MaxLength="30" Width="500" Foreground="#7289da" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder1Title_GotFocus" TextChanged="Reminder1Title_TextChanged"/>
-                            <TextBox x:Name="Reminder1Text" AcceptsReturn="True" Foreground="White" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder1Text_GotFocus" TextChanged="Reminder1Text_TextChanged"/>
+                            <TextBox x:Name="Reminder1Title" MaxLength="30" Width="500" Foreground="White" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder1Title_GotFocus" TextChanged="Reminder1Title_TextChanged"/>
+                            <TextBox x:Name="Reminder1Text" AcceptsReturn="True" Foreground="#F0F0F0" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder1Text_GotFocus" TextChanged="Reminder1Text_TextChanged"/>
                         </StackPanel>
                     </Border>
 
                     <Border x:Name="Reminder2" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20" Height="Auto">
                         <StackPanel Orientation="Vertical">
                             <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteReminder2_Button"/>
-                            <TextBox x:Name="Reminder2Title" MaxLength="30" Width="500" Foreground="#7289da" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder2Title_GotFocus" TextChanged="Reminder2Title_TextChanged"/>
-                            <TextBox x:Name="Reminder2Text" AcceptsReturn="True" Foreground="White" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder2Text_GotFocus" TextChanged="Reminder2Text_TextChanged"/>
+                            <TextBox x:Name="Reminder2Title" MaxLength="30" Width="500" Foreground="White" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder2Title_GotFocus" TextChanged="Reminder2Title_TextChanged"/>
+                            <TextBox x:Name="Reminder2Text" AcceptsReturn="True" Foreground="#F0F0F0" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder2Text_GotFocus" TextChanged="Reminder2Text_TextChanged"/>
                         </StackPanel>
                     </Border>
 
                     <Border x:Name="Reminder3" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20" Height="Auto">
                         <StackPanel Orientation="Vertical">
                             <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteReminder3_Button"/>
-                            <TextBox x:Name="Reminder3Title" MaxLength="30" Width="500" Foreground="#7289da" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder3Title_GotFocus" TextChanged="Reminder3Title_TextChanged"/>
-                            <TextBox x:Name="Reminder3Text" AcceptsReturn="True" Foreground="White" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder3Text_GotFocus" TextChanged="Reminder3Text_TextChanged"/>
+                            <TextBox x:Name="Reminder3Title" MaxLength="30" Width="500" Foreground="White" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder3Title_GotFocus" TextChanged="Reminder3Title_TextChanged"/>
+                            <TextBox x:Name="Reminder3Text" AcceptsReturn="True" Foreground="#F0F0F0" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder3Text_GotFocus" TextChanged="Reminder3Text_TextChanged"/>
                         </StackPanel>
                     </Border>
 
                     <Border x:Name="Reminder4" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20" Height="Auto">
                         <StackPanel Orientation="Vertical">
                             <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteReminder4_Button"/>
-                            <TextBox x:Name="Reminder4Title" MaxLength="30" Width="500" Foreground="#7289da" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder4Title_GotFocus" TextChanged="Reminder4Title_TextChanged"/>
-                            <TextBox x:Name="Reminder4Text" AcceptsReturn="True" Foreground="White" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder4Text_GotFocus" TextChanged="Reminder4Text_TextChanged"/>
+                            <TextBox x:Name="Reminder4Title" MaxLength="30" Width="500" Foreground="White" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder4Title_GotFocus" TextChanged="Reminder4Title_TextChanged"/>
+                            <TextBox x:Name="Reminder4Text" AcceptsReturn="True" Foreground="#F0F0F0" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder4Text_GotFocus" TextChanged="Reminder4Text_TextChanged"/>
                         </StackPanel>
                     </Border>
 
                     <Border x:Name="Reminder5" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20" Height="Auto">
                         <StackPanel Orientation="Vertical">
                             <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteReminder5_Button"/>
-                            <TextBox x:Name="Reminder5Title" MaxLength="30" Width="500" Foreground="#7289da" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder5Title_GotFocus" TextChanged="Reminder5Title_TextChanged"/>
-                            <TextBox x:Name="Reminder5Text" AcceptsReturn="True" Foreground="White" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder5Text_GotFocus" TextChanged="Reminder5Text_TextChanged"/>
+                            <TextBox x:Name="Reminder5Title" MaxLength="30" Width="500" Foreground="White" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder5Title_GotFocus" TextChanged="Reminder5Title_TextChanged"/>
+                            <TextBox x:Name="Reminder5Text" AcceptsReturn="True" Foreground="#F0F0F0" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder5Text_GotFocus" TextChanged="Reminder5Text_TextChanged"/>
                         </StackPanel>
                     </Border>
 
                     <Border x:Name="Reminder6" Visibility="Collapsed" Background="#e33b29" CornerRadius="10" Margin="0,20" Height="Auto">
                         <StackPanel Orientation="Vertical">
                             <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="DeleteReminder6_Button"/>
-                            <TextBox x:Name="Reminder6Title" MaxLength="30" Width="500" Foreground="#7289da" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder6Title_GotFocus" TextChanged="Reminder6Title_TextChanged"/>
-                            <TextBox x:Name="Reminder6Text" AcceptsReturn="True" Foreground="White" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder6Text_GotFocus" TextChanged="Reminder6Text_TextChanged"/>
+                            <TextBox x:Name="Reminder6Title" MaxLength="30" Width="500" Foreground="White" Margin="70,-30" BorderThickness="0" Background="#e33b29" FontSize="28" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder6Title_GotFocus" TextChanged="Reminder6Title_TextChanged"/>
+                            <TextBox x:Name="Reminder6Text" AcceptsReturn="True" Foreground="#F0F0F0" BorderThickness="0" Background="#e33b29" TextWrapping="Wrap" Margin="20,10,0,20" Width="650" FontSize="20" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" GotFocus="Reminder6Text_GotFocus" TextChanged="Reminder6Text_TextChanged"/>
                         </StackPanel>
                     </Border>
                 </StackPanel>
@@ -184,7 +572,7 @@
 
             <Border Background="#e33b29" CornerRadius="10" MaxWidth="600" Margin="270,120,270,0" Grid.Row="1" VerticalAlignment="Top" Height="150">
                 <StackPanel Orientation="Vertical">
-                    <Label x:Name="txtCity" Foreground="White" FontSize="28" HorizontalAlignment="Center" Content="Lapinlahti" VerticalAlignment="Top"/>
+                    <Label x:Name="txtCity" Foreground="White" FontSize="28" HorizontalAlignment="Center" Content="" VerticalAlignment="Top"/>
                     <Label x:Name="txtDegrees" Margin="0,-10" Foreground="White" FontSize="56" HorizontalAlignment="Center" Content="30°C" VerticalAlignment="Top"/>
                     <Label x:Name="txtSymbol" Foreground="White" FontSize="20" HorizontalAlignment="Center" Content="Clouds" VerticalAlignment="Bottom"/>
                 </StackPanel>
@@ -220,17 +608,28 @@
         <Grid x:Name="ConfigureGrid" Visibility="Collapsed" Background="#36393f" Grid.Row="1" Grid.Column="1">
 
             <Label Foreground="White" FontSize="32" Margin="80,10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Configure"/>
-
-            <Border Background="#e33b29" CornerRadius="10" Margin="140,90,140,0" VerticalAlignment="Top" MaxWidth="700" Height="70">
+            <StackPanel>
+            <Border Background="#e33b29" CornerRadius="10" Margin="140,90,140,30" VerticalAlignment="Top" MaxWidth="700" Height="70">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label Foreground="White" FontSize="18" Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Location"/>
+                    <Label Foreground="White" FontSize="18" Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Name"/>
                     <Border Background="White" CornerRadius="10" Grid.Row="1" Width="450" Height="30">
-                        <TextBox x:Name="txtLocation" HorizontalAlignment="Left" Margin="20,0" Foreground="#7289da" VerticalAlignment="Center" Text="Lapinlahti" FontSize="18" VerticalContentAlignment="Center" Background="White" BorderThickness="0" Width="400" MaxLength="40"/>
+                            <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="20,0" Foreground="#7289da" VerticalAlignment="Center" Text="" FontSize="18" VerticalContentAlignment="Center" Background="White" BorderThickness="0" Width="400" MaxLength="30"  TextChanged="txtName_TextChanged"/>
                     </Border>
                 </StackPanel>
             </Border>
 
-            <Border Background="#e33b29" CornerRadius="10" Margin="140,200,140,0" VerticalAlignment="Top" MaxWidth="700" Height="70">
+                <Separator Foreground="White" Margin="140,0" MaxWidth="700"/>
+
+                <Border Background="#e33b29" CornerRadius="10" Margin="140,30,140,0" VerticalAlignment="Top" MaxWidth="700" Height="70">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Foreground="White" FontSize="18" Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Location"/>
+                    <Border Background="White" CornerRadius="10" Grid.Row="1" Width="450" Height="30">
+                            <TextBox x:Name="txtLocation" HorizontalAlignment="Left" Margin="20,0" Foreground="#7289da" VerticalAlignment="Center" Text="" FontSize="18" VerticalContentAlignment="Center" Background="White" BorderThickness="0" Width="400" MaxLength="40"  TextChanged="txtLocation_TextChanged"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#e33b29" CornerRadius="10" Margin="140,30" VerticalAlignment="Top" MaxWidth="700" Height="70">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Label Foreground="White" FontSize="18" Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Unit System"/>
 
@@ -243,6 +642,7 @@
                     </Border>
                 </StackPanel>
             </Border>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
