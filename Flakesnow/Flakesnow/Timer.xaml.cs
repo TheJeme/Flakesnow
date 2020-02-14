@@ -33,7 +33,14 @@ namespace Flakesnow
         {
             if (!isPause)
             {
-                TimeLabel.Content = $"{hours}:{minutes}:{seconds}";
+                if (hours > 0)
+                {
+                    TimeLabel.Content = $"{hours}:{minutes}:{seconds}";
+                }
+                else
+                {
+                    TimeLabel.Content = $"{minutes}:{seconds}";
+                }
                 seconds++;
                 if (seconds >= 60)
                 {
@@ -50,7 +57,7 @@ namespace Flakesnow
 
         private void Restart_Click(object sender, RoutedEventArgs e)
         {
-            TimeLabel.Content = "0:0:0";
+            TimeLabel.Content = "0:0";
             seconds = 0;
             minutes = 0;
             hours = 0;

@@ -264,13 +264,9 @@ namespace Flakesnow
                 {
                     DisplayForecast(client.DownloadString(url));
                 }
-                catch (WebException ex)
+                catch (Exception)
                 {
-                    MessageBox.Show("Unknown weberror\n" + ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Unknown error\n" + ex.Message);
+                    MessageBox.Show("Unknown location, please update it from Configure");
                 }
             }
             

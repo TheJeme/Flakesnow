@@ -12,7 +12,7 @@
 
     <Grid>
         <StackPanel Margin="0,15,0,10">
-            <Label x:Name="TimeLabel" Content="0:0:0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" FontSize="48"/>
+            <Label x:Name="TimeLabel" Content="0:0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" FontSize="48"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
                 <Button x:Name="RestartButton" Content="Restart" Width="60" Margin="5,0" Click="Restart_Click"/>
                 <Button x:Name="PauseButton" Content="Pause" Width="60" Height="20" Margin="5,0" Click="Pause_Click"/>

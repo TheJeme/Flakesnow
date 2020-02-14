@@ -84,3 +84,7 @@ D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\Flakesnow\obj\Debug\Flakesnow.csproj.CoreC
 D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\Flakesnow\obj\Debug\Flakesnow.csproj.CopyComplete
 D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\Flakesnow\obj\Debug\Flakesnow.exe
 D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\Flakesnow\obj\Debug\Flakesnow.pdb
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\Flakesnow\bin\Debug\Flakesnow.exe.manifest
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\Flakesnow\bin\Debug\Flakesnow.application
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\Flakesnow\obj\Debug\Flakesnow.exe.manifest
+D:\KOODAUS\C#\WPF\Flakesnow\Flakesnow\Flakesnow\obj\Debug\Flakesnow.application
