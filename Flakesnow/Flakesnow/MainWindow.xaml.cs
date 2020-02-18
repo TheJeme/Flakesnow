@@ -1,22 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Drawing;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml;
-using System.Diagnostics;
 using Flakesnow.Properties;
 using System.Windows.Threading;
 
@@ -71,10 +62,6 @@ namespace Flakesnow
 
         const string weatherApiKey = "e238f11ff8bb1b9c19d97a11ba1b3c17";
 
-        const string CurrentUrl =
-            "http://api.openweathermap.org/data/2.5/weather?" +
-            "q=@LOC@&mode=xml&units=@unit@&APPID=" + weatherApiKey;
-
         const string ForecastUrl =
             "http://api.openweathermap.org/data/2.5/forecast?" +
             "q=@LOC@&mode=xml&units=@unit@&APPID=" + weatherApiKey;
@@ -85,19 +72,18 @@ namespace Flakesnow
         List<Image> txtTimeSymbols = new List<Image>();
 
 
-        private void Window_StateChanged(object sender, EventArgs e)
-        {/*
-            if (this.WindowState == WindowState.Maximized)
-            {
-                this.WindowState = WindowState.Normal;
-            }*/
-        }
-
-
 
         private void quit_Button(object sender, MouseButtonEventArgs e)
         {
             this.Close();
+        }
+
+        private void fullScreenWindow_Button(object sender, MouseButtonEventArgs e)
+        {
+            if (this.WindowState != WindowState.Maximized)
+                this.WindowState = WindowState.Maximized;
+            else
+                this.WindowState = WindowState.Normal;
         }
 
         private void hideWindow_Button(object sender, MouseButtonEventArgs e)

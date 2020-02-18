@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace Flakesnow
@@ -41,7 +30,8 @@ namespace Flakesnow
             dt.Tick += dtTicker;
             dt.Start();
         }
-        SoundPlayer snd = new SoundPlayer(new Uri("Resources/alarmsound.wav", UriKind.Relative).ToString());
+
+        SoundPlayer snd = new SoundPlayer(new Uri("../../Resources/alarmsound.wav", UriKind.Relative).ToString());
         private void dtTicker(object sender, EventArgs e)
         {
             Label1.Content = DateTime.Now.ToString("HH.mm.ss"); //Updates time label every second
@@ -84,9 +74,13 @@ namespace Flakesnow
                 MinuteBox.IsReadOnly = false;
                 AlarmTime.Content = ("Set alarm time");
             }
+        }
 
-
-
+        private void AlarmWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            alarmSound = false;
+            snd.Stop();
+            snd.Dispose();
         }
     }
 }

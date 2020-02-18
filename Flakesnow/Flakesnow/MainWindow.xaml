@@ -10,7 +10,7 @@
         Background="#f7f7f7"
         Title="Flakesnow"
         Icon="Resources/snowflake-icon.ico"
-        Height="750" Width="1200" MinHeight="750" MinWidth="1200" StateChanged="Window_StateChanged" Closing="Window_Closing">
+        Height="750" Width="1200" MinHeight="750" MinWidth="1200" Closing="Window_Closing">
     <WindowChrome.WindowChrome>
         <WindowChrome
         CaptionHeight="14"
@@ -33,8 +33,8 @@
         <Rectangle Fill="#202225" Grid.Row="0" Grid.Column="1" Width="Auto" Height="Auto"/>
         <Rectangle Fill="#202225" Grid.Row="0" Grid.Column="0" Width="Auto" Height="Auto"/>
         <Label Content="Flakesnow" Grid.Row="0" Grid.Column="0" Foreground="White" FontSize="22" VerticalContentAlignment="Center" Margin="20,0"/>
-        <Label Grid.Row="0" Foreground="White" Width="40" Height="40" Grid.Column="1" Content="x" FontSize="24" HorizontalAlignment="right" HorizontalContentAlignment="Center" Margin="0,0" VerticalAlignment="Center" MouseLeftButtonDown="quit_Button"/>
-        <Label Grid.Row="0" Foreground="White" Width="40" Height="40" Grid.Column="1" Content="⧠" FontSize="16" HorizontalAlignment="right" HorizontalContentAlignment="Center" Margin="41,0" VerticalAlignment="Center" VerticalContentAlignment="Bottom" MouseLeftButtonDown="hideWindow_Button"/>
+        <Label Grid.Row="0" Foreground="White" Width="40" Height="40" Grid.Column="1" Content="✕" FontSize="16" HorizontalAlignment="right" HorizontalContentAlignment="Center" Margin="0,0" VerticalAlignment="Center" VerticalContentAlignment="Bottom" MouseLeftButtonDown="quit_Button"/>
+        <Label Grid.Row="0" Foreground="White" Width="40" Height="40" Grid.Column="1" Content="⧠" FontSize="16" HorizontalAlignment="right" HorizontalContentAlignment="Center" Margin="41,0" VerticalAlignment="Center" VerticalContentAlignment="Bottom" MouseLeftButtonDown="fullScreenWindow_Button"/>
         <Label Grid.Row="0" Foreground="White" Width="40" Height="40" Grid.Column="1" Content="__" FontSize="24" HorizontalAlignment="right" HorizontalContentAlignment="Center" Margin="81,0" VerticalAlignment="Center" MouseLeftButtonDown="hideWindow_Button"/>
         
 

@@ -7,8 +7,9 @@
         ResizeMode="NoResize"
         Icon="Resources/Alarm.ico"
         mc:Ignorable="d"
-        Title="Alarm" Height="350" Width="350" Loaded="Window_Loaded">
-    <Grid Background="#FF3C3C3C">
+        Title="Alarm" Height="350" Width="350" Loaded="Window_Loaded" Closing="AlarmWindow_Closing">
+    <Grid Background="#36393f">
+
         <Label x:Name="Label1" Content="00.00.00" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White"/>
         <Button x:Name="AlarmButton" Content="Set alarm" Margin="0,250,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="82" Height="35" Click="AlarmButton_Click"/>
         <ComboBox x:Name="HourBox" Margin="0,200,106,0" Width="80" MaxDropDownHeight="140" VerticalAlignment="Top" HorizontalAlignment="Center"  SelectedIndex="0">
