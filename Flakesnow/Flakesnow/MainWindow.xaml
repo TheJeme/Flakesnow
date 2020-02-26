@@ -46,35 +46,35 @@
 
             <Border Background="#e33b29" CornerRadius="20" Margin="0,40,0,20" Width="280" Height="70" MouseLeftButtonDown="border1_MouseLeftButtonDown">
                 <StackPanel Orientation="Horizontal">
-                    <Image Grid.Column="1" Source="Resources/house.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
+                    <Image Grid.Column="1" Source="Resources/home.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
                     <Label Foreground="White" Content="Home" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
 
             <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border4_MouseLeftButtonDown">
                 <StackPanel Orientation="Horizontal">
-                    <Image Grid.Column="1" Source="Resources/thermometer.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
+                    <Image Grid.Column="1" Source="Resources/weather.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
                     <Label Foreground="White" Content="Weather" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
 
             <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border2_MouseLeftButtonDown">
                 <StackPanel Orientation="Horizontal">
-                    <Image Grid.Column="1" Source="Resources/hourglass.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
+                    <Image Grid.Column="1" Source="Resources/timers.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
                     <Label Foreground="White" Content="Timers" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
 
             <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border3_MouseLeftButtonDown">
                 <StackPanel Orientation="Horizontal">
-                    <Image Grid.Column="1" Source="Resources/checklist.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
+                    <Image Grid.Column="1" Source="Resources/reminder.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Bottom"/>
                     <Label Foreground="White" Content="Reminders" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
 
             <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border5_MouseLeftButtonDown">
                 <StackPanel Orientation="Horizontal">
-                    <Image Grid.Column="1" Source="Resources/cog.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
+                    <Image Grid.Column="1" Source="Resources/configure.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
                     <Label Foreground="White" Content="Configure" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
@@ -93,7 +93,7 @@
                 </StackPanel>
             </Border>
             
-            <Label Foreground="White" FontSize="32" Margin="0,210" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Apps"/>
+            <Label Foreground="White" FontSize="32" Margin="0,210" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Tools"/>
             <Border Background="#e33b29" MaxWidth="850" CornerRadius="10" Margin="90,280,90,0" VerticalAlignment="Top" Height="220">
                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

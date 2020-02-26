@@ -37,11 +37,11 @@
                 Click="CloseButton_Click">
             <Image Source="Resources/close1.png" Height="30"/>
         </Button>
-        <Button x:Name="minimizeButton" Grid.Row="0" Margin="40,0" HorizontalAlignment="Right" Focusable="False" IsTabStop="False" Template="{StaticResource ButtonTemplate}"
+        <Button x:Name="minimizeButton" Grid.Row="0" Margin="70,0" HorizontalAlignment="Right" Focusable="False" IsTabStop="False" Template="{StaticResource ButtonTemplate}"
                 Click="MinimizeButton_Click">
             <Image Source="Resources/minimize1.png" Height="30"/>
         </Button>
-        <Button x:Name="newButton" Grid.Row="0" Margin="0,0,80,0" HorizontalAlignment="Right" Focusable="False" IsTabStop="False" Template="{StaticResource ButtonTemplate}"
+        <Button x:Name="newButton" Grid.Row="0" Margin="35,0" HorizontalAlignment="Right" Focusable="False" IsTabStop="False" Template="{StaticResource ButtonTemplate}"
                 Click="NewButton_Click">
             <Image Source="Resources/new1.png" Height="30"/>
         </Button>

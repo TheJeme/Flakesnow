@@ -200,20 +200,15 @@
     <Resource Include="Resources\new1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\checklist.png" />
     <Resource Include="Resources\cog.png" />
     <Resource Include="Resources\color-picker.ico" />
     <Resource Include="Resources\color-picker.png" />
     <Resource Include="Resources\colorpicker.png" />
-    <Resource Include="Resources\hourglass.png" />
-    <Resource Include="Resources\house.png" />
-    <Resource Include="Resources\id-card.png" />
     <Resource Include="Resources\noodes.png" />
     <Resource Include="Resources\noodes1.png" />
     <Resource Include="Resources\paint.png" />
     <Resource Include="Resources\plus.png" />
     <Resource Include="Resources\snowflake-icon.ico" />
-    <Resource Include="Resources\thermometer.png" />
     <Resource Include="Resources\timer.ico" />
     <Resource Include="Resources\timer.png" />
     <Resource Include="Resources\wi-cloudy.png" />
@@ -234,6 +229,11 @@
     <Resource Include="Resources\alarm.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\timers.png" />
+    <Resource Include="Resources\configure.png" />
+    <Resource Include="Resources\home.png" />
+    <Resource Include="Resources\reminder.png" />
+    <Resource Include="Resources\weather.png" />
     <Resource Include="snowflake-icon.ico" />
     <Resource Include="Resources\alarm.ico" />
     <Content Include="Resources\alarmsound.wav" />

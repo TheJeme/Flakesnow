@@ -587,7 +587,12 @@ namespace Flakesnow
             }
             else if(CountTillDate_Stackpanel.Visibility == Visibility.Visible)
             {
-                targetDateOnTimer = CountTillDate.SelectedDate.Value;
+                if (CountTillDate.SelectedDate.HasValue)
+                    targetDateOnTimer = CountTillDate.SelectedDate.Value;
+                else
+                {
+                    targetDateOnTimer = DateTime.Now;
+                }
             }
             
             if (targetDateOnTimer.Hour >= 24)
