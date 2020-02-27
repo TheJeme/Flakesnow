@@ -61,7 +61,7 @@
             <Border Background="#e33b29" CornerRadius="20" Margin="0,20" Width="280" Height="70" MouseLeftButtonDown="border2_MouseLeftButtonDown">
                 <StackPanel Orientation="Horizontal">
                     <Image Grid.Column="1" Source="Resources/timers.png" HorizontalAlignment="Left" Margin="20,0" Width="60" Height="60" Grid.Row="1" VerticalAlignment="Center"/>
-                    <Label Foreground="White" Content="Timers" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Label Foreground="White" Content="Counters" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
 
@@ -115,7 +115,7 @@
 
         <Grid x:Name="TimerGrid" Visibility="Collapsed" Background="#36393f" Grid.Row="1" Grid.Column="1">
 
-            <Label Foreground="White" FontSize="32" Margin="80,10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Timers"/>
+            <Label Foreground="White" FontSize="32" Margin="80,10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Counters"/>
 
             <Border CornerRadius="64" Background="#e33b29" Margin="55,55" Width="60" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Right" MouseLeftButtonDown="AddNewTimer_Button">
                 <Label Content="+" Margin="0,-16,0,13" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="52" Foreground="White"/>
@@ -263,15 +263,15 @@
                 <Border Visibility="Visible" Background="#e33b29" CornerRadius="10" Margin="150,150" MaxHeight="450" MaxWidth="600">
                     <StackPanel Orientation="Vertical">
                         <Label Content="x" FontSize="18" Margin="5,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="HideCreateNewTimer_Button"/>
-                        <Label Content="Create new timer" Foreground="White" FontSize="38" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                        <Label Content="Create new counter" Foreground="White" FontSize="38" VerticalAlignment="Top" HorizontalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
 
                             <Border x:Name="EnableCountdown" Background="White" CornerRadius="10" Margin="30,0" VerticalAlignment="Center" MouseLeftButtonDown="EnableCountdown_Button">
-                                <Label FontSize="20" Foreground="#7289da" Content="Countdown" HorizontalContentAlignment="Center" Width="140" VerticalContentAlignment="Center"/>
+                                <Label FontSize="20" Foreground="#7289da" Content="Timer" HorizontalContentAlignment="Center" Width="140" VerticalContentAlignment="Center"/>
                             </Border>
 
                             <Border x:Name="EnableCountTill" Background="LightGray" CornerRadius="10" Margin="30,0" VerticalAlignment="Center" MouseLeftButtonDown="EnableCountTill_Button">
-                                <Label FontSize="20" Foreground="#7289da" Content="Count till date" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                <Label FontSize="20" Foreground="#7289da" Content="Countdown" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                             </Border>
                         </StackPanel>
 

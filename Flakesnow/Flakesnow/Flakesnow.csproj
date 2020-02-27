@@ -205,7 +205,6 @@
     <Resource Include="Resources\color-picker.png" />
     <Resource Include="Resources\colorpicker.png" />
     <Resource Include="Resources\noodes.png" />
-    <Resource Include="Resources\noodes1.png" />
     <Resource Include="Resources\paint.png" />
     <Resource Include="Resources\plus.png" />
     <Resource Include="Resources\snowflake-icon.ico" />
