@@ -5,16 +5,23 @@
 
 ## Features
 
-Weather at every location.
+### Weather at every location.
+
 ![Weather](https://i.imgur.com/hmytgBw.png)
 
-Timers so you don't miss you anything.
+
+### Timers so you don't miss you anything.
+
 ![Timer](https://i.imgur.com/jAYEJLt.png)
 
-Reminders to remind you.
+
+### Reminders to remind you.
+
 ![Reminder](https://i.imgur.com/LjVqQIc.png)
 
-Configure settings.
+
+### Configure settings.
+
 ![Configure](https://i.imgur.com/g6GDfYT.png)
 
 
