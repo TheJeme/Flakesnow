@@ -10,7 +10,7 @@
 ![Weather](https://i.imgur.com/hmytgBw.png)
 
 
-### Timers so you don't miss you anything.
+### Timers so you don't miss anything.
 
 ![Timer](https://i.imgur.com/jAYEJLt.png)
 
@@ -27,6 +27,7 @@
 
 ## Download
 
+Not done yet
 
 ## License
 
