@@ -8,7 +8,7 @@
         WindowStyle="None" AllowsTransparency="True"
         Background="LightGoldenrodYellow"
         Topmost="True"
-        Title="MainWindow" Height="250" Width="350" MouseLeftButtonDown="Window_MouseLeftButtonDown" MinWidth="200" MinHeight="100" MaxWidth="800" MaxHeight="700">
+        Title="Noodes" Height="250" Width="350" MouseLeftButtonDown="Window_MouseLeftButtonDown" MinWidth="200" MinHeight="100">
     <WindowChrome.WindowChrome>
         <WindowChrome     
         CaptionHeight="1"  
