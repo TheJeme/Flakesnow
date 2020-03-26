@@ -27,7 +27,8 @@
 
 ## Download
 
-Not done yet
+[Download](https://github.com/TheJeme/Flakesnow/releases/ "Flakesnow") the latest version.
+
 
 ## License
 
