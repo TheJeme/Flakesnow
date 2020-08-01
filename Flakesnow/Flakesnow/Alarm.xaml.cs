@@ -31,7 +31,7 @@ namespace Flakesnow
             dt.Start();
         }
 
-        SoundPlayer snd = new SoundPlayer(new Uri("../../Resources/alarmsound.wav", UriKind.Relative).ToString());
+        SoundPlayer snd = new SoundPlayer(new Uri(Environment.CurrentDirectory + "/alarmsound.wav", UriKind.Relative).ToString());
         private void dtTicker(object sender, EventArgs e)
         {
             Label1.Content = DateTime.Now.ToString("HH.mm.ss"); //Updates time label every second
