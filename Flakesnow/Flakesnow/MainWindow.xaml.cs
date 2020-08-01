@@ -219,7 +219,7 @@ namespace Flakesnow
 
             HideGrids();
             WeatherGrid.Visibility = Visibility.Visible;
-
+            txtDegrees.Content = "";
             if (Convert.ToBoolean(Settings.Default["celsiusSelected"]))
             {
                 txtDegrees.Content += "°C";

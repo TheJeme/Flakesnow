@@ -8,7 +8,7 @@
         WindowStyle="None" AllowsTransparency="True"
         Background="LightGoldenrodYellow"
         Topmost="True"
-        Title="Noodes" Height="250" Width="350" MouseLeftButtonDown="Window_MouseLeftButtonDown" MinWidth="200" MinHeight="100">
+        Title="Notes" Height="250" Width="350" MouseLeftButtonDown="Window_MouseLeftButtonDown" MinWidth="200" MinHeight="100">
     <WindowChrome.WindowChrome>
         <WindowChrome     
         CaptionHeight="1"  
@@ -32,7 +32,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <!-- Top bar-->
-        <Label FontSize="16">Noodes</Label>
+        <Label FontSize="16">Notes</Label>
         <Button x:Name="closeButton" Grid.Row="0" Margin="0" HorizontalAlignment="Right" Focusable="False" IsTabStop="False" Template="{StaticResource ButtonTemplate}"
                 Click="CloseButton_Click">
             <Image Source="Resources/close1.png" Height="30"/>

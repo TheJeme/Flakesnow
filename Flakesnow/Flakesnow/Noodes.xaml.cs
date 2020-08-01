@@ -21,7 +21,7 @@ namespace Flakesnow
         {
             this.WindowState = WindowState.Minimized;
         }
-        private void NewButton_Click(object sender, RoutedEventArgs e) //Minimizes the window
+        private void NewButton_Click(object sender, RoutedEventArgs e) //Opens new window
         {
             var win2 = new Noodes();
             win2.Show();
